@@ -1,0 +1,11 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest",
+        "tslint-react",
+        "tslint-config-airbnb"
+    ],
+    "rules": {
+        "ter-indent": [true, 4]
+    }
+}
