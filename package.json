@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --inline --open --hot",
     "build": "webpack --mode production",
+    "lint": "eslint src/*/**.js; tslint -p tsconfig.json",
     "lint-staged": "lint-staged",
     "test": "test"
   },
@@ -60,7 +61,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint",
-    "*.{ts,tsx}": "tslint"
+    "*.{ts,tsx}": "tslint -p tsconfig.json"
   },
   "pre-commit": "lint-staged"
 }
