@@ -8,6 +8,7 @@
     "rules": {
         "ter-indent": [true, 4],
         "completed-docs": true,
-        "jsdoc-format": true
+        "jsdoc-format": true,
+        "no-submodule-imports": false
     }
 }
