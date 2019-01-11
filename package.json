@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development webpack-dev-server --mode development --inline --open --hot",
     "start-prod": "NODE_ENV=production webpack-dev-server --mode production",
     "build": "NODE_ENV=production webpack --mode production",
-    "lint": "eslint src/*/**.js; tslint -p tsconfig.json",
+    "lint": "eslint src/**/*.js; tslint -p tsconfig.json",
     "lint-staged": "lint-staged",
     "test": "test"
   },
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/pushkar8723/react-boilerplate#readme",
   "dependencies": {
     "@material-ui/core": "^1.5.1",
+    "@types/prop-types": "^15.5.5",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
     "@types/react-redux": "^6.0.6",
@@ -40,7 +41,9 @@
     "and": "0.0.3",
     "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -48,6 +51,7 @@
     "css-loader": "^1.0.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-class-property": "^1.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
@@ -62,7 +66,7 @@
     "typescript": "^2.9.2",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.14"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint",
