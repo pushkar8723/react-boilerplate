@@ -9,6 +9,7 @@
         "ter-indent": [true, 4],
         "completed-docs": true,
         "jsdoc-format": true,
-        "no-submodule-imports": false
+        "no-submodule-imports": false,
+        "no-implicit-dependencies": false
     }
 }

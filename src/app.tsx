@@ -1,13 +1,13 @@
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { UIRouter, UIView } from '@uirouter/react';
+import router from 'config/router';
+import theme from 'config/theme';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import router from './config/router';
-import theme from './config/theme';
 import model from './model';
-import AppShell from './views/AppShell';
+import './styles/main.css';
 
 const store = createStore(
   model,
@@ -20,9 +20,7 @@ ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
       <UIRouter router={router}>
-        <AppShell>
-          <UIView />
-        </AppShell>
+        <UIView />
       </UIRouter>
     </MuiThemeProvider>
   </Provider>,

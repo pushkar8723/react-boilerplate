@@ -1,34 +1,23 @@
-import { hashLocationPlugin, servicesPlugin, UIRouterReact } from '@uirouter/react';
+import { hashLocationPlugin, servicesPlugin, Transition, UIRouterReact } from '@uirouter/react';
 import routes from './routes';
 
 // Create a new instance of the Router
 const router = new UIRouterReact();
 router.plugin(servicesPlugin);
 router.plugin(hashLocationPlugin);
-
-export default router;
-
-/**
- * Function to dynamically insert a state in router.
- *
- * @param {string} name Name of the state
- * @param {string} url URL of the route
- * @param {Element} component Component in state
- * @returns {void}
- */
-export function registerRoute(name: string, url: string, component: React.ReactNode) {
-    router.stateRegistry.register({
-        component,
-        name,
-        url,
-    });
-}
-
 routes.forEach(state => router.stateRegistry.register(state));
 
 // Global config for router
 router.urlService.rules.initial({ state: 'welcome' });
 
-// // Register the "requires auth" hook with the TransitionsService
-// import reqAuthHook from './global/requiresAuth.hook';
-// router.transitionService.onBefore(reqAuthHook.criteria, reqAuthHook.callback, {priority: 10});
+// Error page to show if the url doesn't match any route
+router.urlService.rules.otherwise({ state: '404' });
+
+// Register the page title hook with the TransitionsService
+router.transitionService.onSuccess({}, (transition: Transition) => {
+    const { data } = transition.router.globals.current;
+    const title = `${data && data.pageTitle ? `${data.pageTitle} - ` : ''}Notes Manager`;
+    document.title = title;
+});
+
+export default router;

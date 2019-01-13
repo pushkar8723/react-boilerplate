@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
+import path from 'path';
 
 const mode = process.env.NODE_ENV;
 const isProduction = mode === 'production';
@@ -16,7 +17,8 @@ const config = {
 export default {
     entry: './src/app.tsx',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         path: `${__dirname}/dist`,
     },
 
@@ -28,11 +30,17 @@ export default {
             poll: !isProduction,
             ignored: /node_modules/,
         },
+        host: '0.0.0.0',
     },
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.css'],
+        alias: {
+            config: path.resolve(__dirname, './src/config'),
+            views: path.resolve(__dirname, './src/views'),
+            utils: path.resolve(__dirname, './src/utils'),
+        },
     },
     module: {
         rules: [
@@ -45,7 +53,10 @@ export default {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                ],
             },
             // All files with a '.ts' or '.tsx' extension will be
             // handled by 'awesome-typescript-loader'.

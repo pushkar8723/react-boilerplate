@@ -3,10 +3,12 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
-        "module": "commonjs",
+        "module": "esnext",
         "target": "es6",
         "jsx": "react",
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "baseUrl": "./src"
     },
     "include": [
         "./src/**/*"
