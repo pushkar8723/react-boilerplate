@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 import path from 'path';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const mode = process.env.NODE_ENV;
 const isProduction = mode === 'production';
@@ -63,8 +64,22 @@ export default {
             { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
         ],
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendors: {
+                    chunks: 'all',
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                },
+            },
+        },
+    },
     plugins: [
         htmlPlugin,
         new webpack.DefinePlugin(config),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+        }),
     ],
 };
