@@ -126,22 +126,28 @@ class Detail extends React.Component<IDetailProps> {
                         <Label>Page Count</Label>
                         <div>{volumeInfo.pageCount}</div>
                     </p>
-                    <p>
-                        <Label>Categories</Label>
-                        <div>
-                            {volumeInfo.categories.map(category =>
-                                <div key={category}>{category}</div>)}
-                        </div>
-                    </p>
-                    <p>
-                        <Label>ISBN</Label>
-                        <div>
-                            {volumeInfo.industryIdentifiers.map(identifier =>
-                                <div key={identifier.identifier}>
-                                    {identifier.type} : {identifier.identifier}
-                                </div>)}
-                        </div>
-                    </p>
+                    {
+                        volumeInfo.categories &&
+                        <p>
+                            <Label>Categories</Label>
+                            <div>
+                                {volumeInfo.categories.map(category =>
+                                    <div key={category}>{category}</div>)}
+                            </div>
+                        </p>
+                    }
+                    {
+                        volumeInfo.industryIdentifiers &&
+                        <p>
+                            <Label>ISBN</Label>
+                            <div>
+                                {volumeInfo.industryIdentifiers.map(identifier =>
+                                    <div key={identifier.identifier}>
+                                        {identifier.type} : {identifier.identifier}
+                                    </div>)}
+                            </div>
+                        </p>
+                    }
                 </DescriptionContainer>
             </Container>
         );
