@@ -57,7 +57,8 @@ class BooksCtrl extends ControllerBase<any, any> {
                         id: book.id,
                         publisher: book.volumeInfo.publisher,
                         subtitle: book.volumeInfo.subtitle,
-                        thumbnail: book.volumeInfo.imageLinks.thumbnail,
+                        thumbnail: book.volumeInfo.imageLinks &&
+                            book.volumeInfo.imageLinks.thumbnail,
                         title: book.volumeInfo.title,
                     };
                 });

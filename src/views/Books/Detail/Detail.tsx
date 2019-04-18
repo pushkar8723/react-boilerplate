@@ -96,7 +96,7 @@ class Detail extends React.Component<IDetailProps> {
             <Container>
                 <HeroContainer>
                     <ThumbnailContainer>
-                        <img src={volumeInfo.imageLinks.thumbnail} />
+                        <img src={volumeInfo.imageLinks && volumeInfo.imageLinks.thumbnail} />
                     </ThumbnailContainer>
                     <TextContainer>
                         <Title>{volumeInfo.title}</Title>
