@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import CompressionPlugin from 'compression-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const mode = process.env.NODE_ENV;
 const isProduction = mode === 'production';
@@ -19,7 +20,7 @@ export default {
     entry: './src/app.tsx',
     output: {
         filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        chunkFilename: '[name].[hash].js',
         path: `${__dirname}/dist`,
     },
 
@@ -87,5 +88,8 @@ export default {
         htmlPlugin,
         new webpack.DefinePlugin(config),
         new CompressionPlugin(),
+        ...(isProduction ? [ new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+        })] : []),
     ],
 };

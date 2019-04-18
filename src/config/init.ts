@@ -35,7 +35,7 @@ router.urlService.rules.otherwise({ state: '404' });
 // Register the page title hook with the TransitionsService
 router.transitionService.onSuccess({}, (transition: Transition) => {
     const { data } = transition.router.globals.current;
-    const title = `${data && data.pageTitle ? `${data.pageTitle} - ` : ''}Pacman`;
+    const title = `${data && data.pageTitle ? `${data.pageTitle} - ` : ''}Books`;
     document.title = title;
 });
 

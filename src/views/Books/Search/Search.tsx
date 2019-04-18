@@ -30,6 +30,7 @@ const ListItem = styledComponents.a`
     border-bottom: 1px solid #eee;
     text-decoration: none;
     color: #000;
+    min-height: 166px;
 
     &:hover {
         background-color: #f2f2f2;

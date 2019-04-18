@@ -14,6 +14,7 @@
         "variable-name": false,
         "member-ordering": false,
         "object-shorthand-properties-first": false,
-        "jsx-no-multiline-js": false
+        "jsx-no-multiline-js": false,
+        "space-in-parens": false
     }
 }

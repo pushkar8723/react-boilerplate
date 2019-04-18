@@ -37,7 +37,7 @@ const errorState = createRoute({
  * It will be lazy loaded when user navigates to any posts route.
  */
 const booksFutureState = createRoute({
-    lazyLoad: () => import('views/Books'),
+    lazyLoad: () => import('views/Books'/* webpackChunkName: "books" */),
     name: 'books.**',
     url: '/books',
 });

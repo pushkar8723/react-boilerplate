@@ -38,7 +38,7 @@ export default class Error404 extends React.Component<{}> {
                 <Paper>
                     <img src={noPageGif} />
                     <h3>404 - Page not found :(</h3>
-                    <a href="/">Go Home</a>
+                    <a href="#/welcome">Go Home</a>
                 </Paper>
             </Container>
         );
