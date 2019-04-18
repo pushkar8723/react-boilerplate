@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 const mode = process.env.NODE_ENV;
 const isProduction = mode === 'production';
@@ -41,6 +41,10 @@ export default {
             config: path.resolve(__dirname, './src/config'),
             views: path.resolve(__dirname, './src/views'),
             utils: path.resolve(__dirname, './src/utils'),
+            core: path.resolve(__dirname, './src/core'),
+            model: path.resolve(__dirname, './src/model'),
+            services: path.resolve(__dirname, './src/services'),
+            components: path.resolve(__dirname, './src/components'),
         },
     },
     module: {
@@ -58,6 +62,10 @@ export default {
                     { loader: 'style-loader' },
                     { loader: 'css-loader' },
                 ],
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|ttf|woff2|woff|eot)$/,
+                loader: 'url-loader?limit=1000&name=images/[name]_[hash:6].[ext]',
             },
             // All files with a '.ts' or '.tsx' extension will be
             // handled by 'awesome-typescript-loader'.
@@ -78,8 +86,6 @@ export default {
     plugins: [
         htmlPlugin,
         new webpack.DefinePlugin(config),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-        }),
+        new CompressionPlugin(),
     ],
 };
