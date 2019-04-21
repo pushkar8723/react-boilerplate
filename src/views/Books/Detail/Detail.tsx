@@ -3,8 +3,6 @@ import Loader from 'sleek-ui/Loader';
 import styledComponents from 'styled-components';
 
 const Container = styledComponents.div`
-    display: flex;
-    flex-direction: column;
     flex: 1;
     max-width: 1024px;
     padding: 8px;
