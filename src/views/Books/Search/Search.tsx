@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
+import bookIcon from '../../../images/bookIcon.png';
 import searchGif from '../../../images/search.gif';
 
-const Container = styledComponents.div`
+const Container = styled.div`
     display: flex;
     flex: 1;
     align-items: center;
@@ -11,12 +12,12 @@ const Container = styledComponents.div`
     flex-direction: column;
 `;
 
-const SearchImage = styledComponents.img`
+const SearchImage = styled.img`
     margin-top: -120px;
     margin-bottom: -80px;
 `;
 
-const List = styledComponents.div`
+const List = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -24,7 +25,7 @@ const List = styledComponents.div`
     margin: 0 auto;
 `;
 
-const ListItem = styledComponents.a`
+const ListItem = styled.a`
     padding: 8px;
     display: flex;
     border-bottom: 1px solid #eee;
@@ -37,7 +38,7 @@ const ListItem = styledComponents.a`
     }
 `;
 
-const ThumbnailContainer = styledComponents.div`
+const ThumbnailContainer = styled.div`
     margin-right: 8px;
     min-height: 150px;
     width: 120px;
@@ -49,7 +50,7 @@ const ThumbnailContainer = styledComponents.div`
     }
 `;
 
-const TextContainer = styledComponents.div`
+const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +84,7 @@ export default class Search extends React.Component<ISearchProps> {
         return (
             <ListItem key={book.id} href={`#/books/${book.id}`}>
                 <ThumbnailContainer>
-                    <img src={book.thumbnail} />
+                    <img src={book.thumbnail || bookIcon} />
                 </ThumbnailContainer>
                 <TextContainer>
                     <h4>{book.title}</h4>

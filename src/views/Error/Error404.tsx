@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 import noPageGif from '../../images/noPage.gif';
 
-const Container = styledComponents.div`
+const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@ const Container = styledComponents.div`
         linear-gradient(to bottom, #F3F4F5 160px, white 50vh), white;
 `;
 
-const Paper = styledComponents.div`
+const Paper = styled.div`
     width: 320px;
     background-color: #fff;
     box-shadow: rgba(0,0,0,0.2) 0 1px 2px;

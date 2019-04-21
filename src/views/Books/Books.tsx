@@ -1,9 +1,9 @@
 import { UIView } from '@uirouter/react';
 import * as React from 'react';
 import Drawer from 'sleek-ui/Drawer';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 
-const Toolbar = styledComponents.div`
+const Toolbar = styled.div`
     min-height: 64px;
     display: flex;
     align-items: center;
@@ -12,12 +12,12 @@ const Toolbar = styledComponents.div`
     justify-content: center;
 `;
 
-const Form = styledComponents.form`
+const Form = styled.form`
     flex: 1;
     display: flex;
 `;
 
-const Input = styledComponents.input`
+const Input = styled.input`
     border: none;
     height: 40px;
     font-size: 18px;
@@ -25,7 +25,7 @@ const Input = styledComponents.input`
     flex: 1;
 `;
 
-const Icon = styledComponents.i`
+const Icon = styled.i`
     height: 24px;
     width: 24px;
     border-radius: 2px;
@@ -38,7 +38,7 @@ const Icon = styledComponents.i`
     }
 `;
 
-const MenuIcon = styledComponents.i`
+const MenuIcon = styled.i`
     height: 24px;
     width: 24px;
     border-radius: 2px;
@@ -47,22 +47,22 @@ const MenuIcon = styledComponents.i`
     margin-right: 10px;
 `;
 
-const DrawerHeaderContainer = styledComponents.div`
+const DrawerHeaderContainer = styled.div`
     display: flex;
     align-items: center;
 `;
 
-const DrawerHeaderText = styledComponents.div`
+const DrawerHeaderText = styled.div`
     padding-left: 16px;
 `;
 
-const UIViewContainer = styledComponents.div`
+const UIViewContainer = styled.div`
     display: flex;
     flex: 1;
     overflow: auto;
 `;
 
-const ListItem = styledComponents.a`
+const ListItem = styled.a`
     display: block;
     padding: 16px;
     background-color: #fff;
@@ -78,7 +78,7 @@ const ListItem = styledComponents.a`
     }
 `;
 
-const NameContainer = styledComponents.h4`
+const NameContainer = styled.h4`
     margin-bottom: 8px;
 `;
 

@@ -1,20 +1,21 @@
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
+import bookIcon from '../../../images/bookIcon.png';
 
-const Container = styledComponents.div`
+const Container = styled.div`
     flex: 1;
     max-width: 1024px;
     padding: 8px;
     margin: 0 auto;
 `;
 
-const HeroContainer = styledComponents.div`
+const HeroContainer = styled.div`
     display: flex;
     min-height: 166px;
 `;
 
-const ThumbnailContainer = styledComponents.div`
+const ThumbnailContainer = styled.div`
     margin-right: 8px;
     min-height: 150px;
     width: 120px;
@@ -26,22 +27,22 @@ const ThumbnailContainer = styledComponents.div`
     }
 `;
 
-const TextContainer = styledComponents.div`
+const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     flex: 1;
 `;
 
-const Title = styledComponents.h1`
+const Title = styled.h1`
     margin: 0 0 5px 0;
 `;
 
-const DescriptionContainer = styledComponents.p`
+const DescriptionContainer = styled.p`
     text-align: justify;
 `;
 
-const Label = styledComponents.div`
+const Label = styled.div`
     font-size: 12px;
     font-weight: bold;
 `;
@@ -94,7 +95,10 @@ class Detail extends React.Component<IDetailProps> {
             <Container>
                 <HeroContainer>
                     <ThumbnailContainer>
-                        <img src={volumeInfo.imageLinks && volumeInfo.imageLinks.thumbnail} />
+                        <img
+                            src={volumeInfo.imageLinks && volumeInfo.imageLinks.thumbnail ||
+                                bookIcon}
+                        />
                     </ThumbnailContainer>
                     <TextContainer>
                         <Title>{volumeInfo.title}</Title>

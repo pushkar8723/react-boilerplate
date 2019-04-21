@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 import logoPng from '../../images/logo.png';
 
-const Page = styledComponents.div`
+const Page = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@ const Page = styledComponents.div`
         linear-gradient(to bottom, #F3F4F5 160px, white 50vh), white;
 `;
 
-const LoginContainer = styledComponents.div`
+const LoginContainer = styled.div`
     height: 280px;
     width: 280px;
     background-color: #fff;
@@ -26,7 +26,7 @@ const LoginContainer = styledComponents.div`
     flex-direction: column;
 `;
 
-const WelcomeTextContainer = styledComponents.div`
+const WelcomeTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -34,7 +34,7 @@ const WelcomeTextContainer = styledComponents.div`
     justify-content: center;
 `;
 
-const LogoImage = styledComponents.img`
+const LogoImage = styled.img`
     width: 150px;
     height: 150px;
     margin-bottom: -50px;

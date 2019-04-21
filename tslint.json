@@ -15,6 +15,7 @@
         "member-ordering": false,
         "object-shorthand-properties-first": false,
         "jsx-no-multiline-js": false,
-        "space-in-parens": false
+        "space-in-parens": false,
+        "import-name": false
     }
 }
