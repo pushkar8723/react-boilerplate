@@ -164,9 +164,9 @@ export function bindMVC<S, G>(component: ComponentType, scopeName: string,
             let ctrl: ControllerBase<S, G>;
             if (controller) {
                 ctrl = new controller(
-                    stateProps.global,
                     stateProps.scope,
                     (scope: S) => dispatch(mapPayloadToAction(scopeName, setScope(scope))),
+                    stateProps.global,
                     (global: S) => dispatch(mapPayloadToAction(scopeName, setGlobal(global))),
                 );
             }

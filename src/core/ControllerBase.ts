@@ -22,8 +22,8 @@ class ControllerBase<S, G> {
      */
     protected _setGlobal: (global: G) => void;
 
-    constructor(global: G, scope: S, setScope: (scope: S) => void,
-                setGlobal: (global: G) => void) {
+    constructor(scope: S, setScope: (scope: S) => void,
+                global: G, setGlobal: (global: G) => void) {
         this._global = global;
         this._scope = scope;
         this._setScope = setScope;

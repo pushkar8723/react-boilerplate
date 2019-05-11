@@ -10,9 +10,9 @@ class DetailCtrl extends ControllerBase<any, any> {
      */
     private _googleBooksService: GoogleBooksService;
 
-    constructor(scope: any, global: any, setScope: (scope: any) => void,
-                setGlobal: any) {
-        super(scope, global, setScope, setGlobal);
+    constructor(scope: any, setScope: (scope: any) => void,
+                global: any, setGlobal: any) {
+        super(scope, setScope, global, setGlobal);
         this._googleBooksService = new GoogleBooksService();
     }
 

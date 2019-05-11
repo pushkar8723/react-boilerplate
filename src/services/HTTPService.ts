@@ -23,14 +23,14 @@ class HTTPService extends ServiceBase {
     /**
      * Sets the headers to the given object.
      */
-    public setHeaders = (headers: IHTTPHeaders) => {
+    public setHeaders(headers: IHTTPHeaders) {
         this.headers = headers;
     }
 
     /**
      * Adds a header to list of headers.
      */
-    public appendHeader = (key: string, value: string) => {
+    public appendHeader(key: string, value: string) {
         this.headers = {
             ...this.headers,
             key: value,
@@ -40,14 +40,14 @@ class HTTPService extends ServiceBase {
     /**
      * Removes the given header.
      */
-    public removeHeader = (key: string) => {
+    public removeHeader(key: string) {
         this.headers[key] = undefined;
     }
 
     /**
      * Returns axios interceptors.
      */
-    public getInterceptors = () => {
+    public getInterceptors() {
         return axios.interceptors;
     }
 
@@ -57,7 +57,7 @@ class HTTPService extends ServiceBase {
      * provided by axios. Here, only the set heards are spread
      * over what was sent in config.
      */
-    public request = (config: AxiosRequestConfig) => {
+    public request(config: AxiosRequestConfig) {
         config.headers = {
             ...this.headers,
             ...config.headers,
@@ -68,7 +68,7 @@ class HTTPService extends ServiceBase {
     /**
      * Get request.
      */
-    public get = (url: string, params?: IQueryPrams, headers?: IHTTPHeaders) => {
+    public get(url: string, params?: IQueryPrams, headers?: IHTTPHeaders) {
         return this.request({
             headers,
             method: 'GET',
@@ -80,7 +80,7 @@ class HTTPService extends ServiceBase {
     /**
      * Post request
      */
-    public post = (url: string, data?: any, params?: IQueryPrams, headers?: IHTTPHeaders) => {
+    public post(url: string, data?: any, params?: IQueryPrams, headers?: IHTTPHeaders) {
         return this.request({
             data,
             headers,
@@ -93,7 +93,7 @@ class HTTPService extends ServiceBase {
     /**
      * Put request
      */
-    public put = (url: string, data: any, params?: IQueryPrams, headers?: IHTTPHeaders) => {
+    public put(url: string, data: any, params?: IQueryPrams, headers?: IHTTPHeaders) {
         return this.request({
             data,
             headers,
@@ -106,7 +106,7 @@ class HTTPService extends ServiceBase {
     /**
      * Delete request
      */
-    public delete = (url: string, data: any, params?: IQueryPrams, headers?: IHTTPHeaders) => {
+    public delete(url: string, data: any, params?: IQueryPrams, headers?: IHTTPHeaders) {
         return this.request({
             data,
             headers,

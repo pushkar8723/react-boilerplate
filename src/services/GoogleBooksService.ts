@@ -23,7 +23,7 @@ class GoogleBooksService extends ServiceBase {
     /**
      * API to search for book by name.
      */
-    public searchBooks = (bookName: string, start: number = 0, items: number = 20) => {
+    public searchBooks(bookName: string, start: number = 0, items: number = 20) {
         return this.httpService.get(`${this.endpoint}/volumes`, {
             maxResults: items.toString(),
             q: bookName,
@@ -34,7 +34,7 @@ class GoogleBooksService extends ServiceBase {
     /**
      * API to get book by ID
      */
-    public getBook = (id: string) => {
+    public getBook(id: string) {
         return this.httpService.get(`${this.endpoint}/volumes/${id}`);
     }
 }

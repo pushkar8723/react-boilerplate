@@ -10,25 +10,17 @@ class BooksCtrl extends ControllerBase<any, any> {
     /**
      * Local Storage Service
      */
-    private _localStorageService: LocalStorageService;
+    private _localStorageService = new LocalStorageService();
 
     /**
      * Google Book Service
      */
-    private _googleBooksService: GoogleBooksService;
+    private _googleBooksService = new GoogleBooksService();
 
     /**
      * Routing Service
      */
-    private _routingService: RoutingService;
-
-    constructor(global: any, scope: any, setScope: (scope: any) => void,
-                setGlobal: (global: any) => void) {
-        super(global, scope, setScope, setGlobal);
-        this._localStorageService = new LocalStorageService();
-        this._routingService = new RoutingService();
-        this._googleBooksService = new GoogleBooksService();
-    }
+    private _routingService = new RoutingService();
 
     /**
      * Updates the global auth from localstorage.
@@ -48,7 +40,7 @@ class BooksCtrl extends ControllerBase<any, any> {
     public loadBook = (bookName: string) => {
         this._setGlobal({ inProgress: true });
         this._routingService.goTo('books.search');
-        this._googleBooksService.searchBooks(bookName).then(
+        return this._googleBooksService.searchBooks(bookName).then(
             (resp: any) => {
                 this._setGlobal({ inProgress: false });
                 const books = resp.data.items.map((book: any) => {

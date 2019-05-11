@@ -1,0 +1,311 @@
+{
+    "response": {
+        "data": {
+            "kind": "books#volumes",
+            "totalItems": 1569,
+            "items": [
+                {
+                    "kind": "books#volume",
+                    "id": "mA8A4BYWB1IC",
+                    "etag": "Udm6e1psUN0",
+                    "selfLink": "https://www.googleapis.com/books/v1/volumes/mA8A4BYWB1IC",
+                    "volumeInfo": {
+                        "title": "A Game of Thrones 4-Book Bundle",
+                        "subtitle": "A Song of Ice and Fire Series: A Game of Thrones, A Clash of Kings, A Storm of Swords, and A Feast for Crows",
+                        "authors": [
+                            "George R. R. Martin"
+                        ],
+                        "publisher": "Bantam",
+                        "publishedDate": "2011-03-22",
+                        "description": "The perfect gift for fans of HBO's Game of Thrones—a boxed set featuring the first four novels! George R. R. Martin's A Song of Ice and Fire series has become, in many ways, the gold standard for modern epic fantasy. Martin—dubbed the \"American Tolkien\" by Time magazine—has created a world that is as rich and vital as any piece of historical fiction, set in an age of knights and chivalry and filled with a plethora of fascinating, multidimensional characters that you love, hate to love, or love to hate as they struggle for control of a divided kingdom. This bundle includes the following novels: A GAME OF THRONES A CLASH OF KINGS A STORM OF SWORDS A FEAST FOR CROWS",
+                        "industryIdentifiers": [
+                            {
+                                "type": "ISBN_10",
+                                "identifier": "0345529065"
+                            },
+                            {
+                                "type": "ISBN_13",
+                                "identifier": "9780345529060"
+                            }
+                        ],
+                        "readingModes": {
+                            "text": true,
+                            "image": false
+                        },
+                        "pageCount": 3264,
+                        "printType": "BOOK",
+                        "categories": [
+                            "Fiction"
+                        ],
+                        "averageRating": 4,
+                        "ratingsCount": 306,
+                        "maturityRating": "NOT_MATURE",
+                        "allowAnonLogging": true,
+                        "contentVersion": "4.25.15.0.preview.2",
+                        "panelizationSummary": {
+                            "containsEpubBubbles": false,
+                            "containsImageBubbles": false
+                        },
+                        "imageLinks": {
+                            "smallThumbnail": "http://books.google.com/books/content?id=mA8A4BYWB1IC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                            "thumbnail": "http://books.google.com/books/content?id=mA8A4BYWB1IC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                        },
+                        "language": "en",
+                        "previewLink": "http://books.google.co.in/books?id=mA8A4BYWB1IC&dq=a+song+of+ice+and+fire&hl=&cd=1&source=gbs_api",
+                        "infoLink": "http://books.google.co.in/books?id=mA8A4BYWB1IC&dq=a+song+of+ice+and+fire&hl=&source=gbs_api",
+                        "canonicalVolumeLink": "https://books.google.com/books/about/A_Game_of_Thrones_4_Book_Bundle.html?hl=&id=mA8A4BYWB1IC"
+                    },
+                    "saleInfo": {
+                        "country": "IN",
+                        "saleability": "NOT_FOR_SALE",
+                        "isEbook": false
+                    },
+                    "accessInfo": {
+                        "country": "IN",
+                        "viewability": "NO_PAGES",
+                        "embeddable": false,
+                        "publicDomain": false,
+                        "textToSpeechPermission": "ALLOWED",
+                        "epub": {
+                            "isAvailable": true
+                        },
+                        "pdf": {
+                            "isAvailable": true
+                        },
+                        "webReaderLink": "http://play.google.com/books/reader?id=mA8A4BYWB1IC&hl=&printsec=frontcover&source=gbs_api",
+                        "accessViewStatus": "NONE",
+                        "quoteSharingAllowed": false
+                    },
+                    "searchInfo": {
+                        "textSnippet": "The perfect gift for fans of HBO&#39;s Game of Thrones—a boxed set featuring the first four novels! George R. R. Martin&#39;s A Song of Ice and Fire series has become, in many ways, the gold standard for modern epic fantasy."
+                    }
+                },
+                {
+                    "kind": "books#volume",
+                    "id": "QlAnF4NFb6EC",
+                    "etag": "KR0uCtgbZMw",
+                    "selfLink": "https://www.googleapis.com/books/v1/volumes/QlAnF4NFb6EC",
+                    "volumeInfo": {
+                        "title": "A Dance With Dragons: Part 2 After The Feast (A Song of Ice and Fire, Book 5)",
+                        "authors": [
+                            "George R.R. Martin"
+                        ],
+                        "publisher": "HarperCollins UK",
+                        "publishedDate": "2012-03-15",
+                        "description": "HBO’s hit series A GAME OF THRONES is based on George R R Martin’s internationally bestselling series A SONG OF ICE AND FIRE, the greatest fantasy epic of the modern age. A DANCE WITH DRAGONS: AFTER THE FEAST is the SECOND part of the fifth volume in the series. ‘Vivid, rich, multi-layered and utterly addictive’ Daily Express",
+                        "industryIdentifiers": [
+                            {
+                                "type": "ISBN_13",
+                                "identifier": "9780007482917"
+                            },
+                            {
+                                "type": "ISBN_10",
+                                "identifier": "0007482914"
+                            }
+                        ],
+                        "readingModes": {
+                            "text": true,
+                            "image": false
+                        },
+                        "pageCount": 592,
+                        "printType": "BOOK",
+                        "categories": [
+                            "Fiction"
+                        ],
+                        "averageRating": 3.5,
+                        "ratingsCount": 6,
+                        "maturityRating": "NOT_MATURE",
+                        "allowAnonLogging": true,
+                        "contentVersion": "2.26.29.0.preview.2",
+                        "panelizationSummary": {
+                            "containsEpubBubbles": false,
+                            "containsImageBubbles": false
+                        },
+                        "imageLinks": {
+                            "smallThumbnail": "http://books.google.com/books/content?id=QlAnF4NFb6EC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                            "thumbnail": "http://books.google.com/books/content?id=QlAnF4NFb6EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                        },
+                        "language": "en",
+                        "previewLink": "http://books.google.co.in/books?id=QlAnF4NFb6EC&printsec=frontcover&dq=a+song+of+ice+and+fire&hl=&cd=2&source=gbs_api",
+                        "infoLink": "https://play.google.com/store/books/details?id=QlAnF4NFb6EC&source=gbs_api",
+                        "canonicalVolumeLink": "https://market.android.com/details?id=book-QlAnF4NFb6EC"
+                    },
+                    "saleInfo": {
+                        "country": "IN",
+                        "saleability": "FOR_SALE",
+                        "isEbook": true,
+                        "listPrice": {
+                            "amount": 356.73,
+                            "currencyCode": "INR"
+                        },
+                        "retailPrice": {
+                            "amount": 249.71,
+                            "currencyCode": "INR"
+                        },
+                        "buyLink": "https://play.google.com/store/books/details?id=QlAnF4NFb6EC&rdid=book-QlAnF4NFb6EC&rdot=1&source=gbs_api",
+                        "offers": [
+                            {
+                                "finskyOfferType": 1,
+                                "listPrice": {
+                                    "amountInMicros": 356730000,
+                                    "currencyCode": "INR"
+                                },
+                                "retailPrice": {
+                                    "amountInMicros": 249710000,
+                                    "currencyCode": "INR"
+                                }
+                            }
+                        ]
+                    },
+                    "accessInfo": {
+                        "country": "IN",
+                        "viewability": "PARTIAL",
+                        "embeddable": false,
+                        "publicDomain": false,
+                        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                        "epub": {
+                            "isAvailable": true,
+                            "acsTokenLink": "http://books.google.co.in/books/download/A_Dance_With_Dragons_Part_2_After_The_Fe-sample-epub.acsm?id=QlAnF4NFb6EC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                        },
+                        "pdf": {
+                            "isAvailable": false
+                        },
+                        "webReaderLink": "http://play.google.com/books/reader?id=QlAnF4NFb6EC&hl=&printsec=frontcover&source=gbs_api",
+                        "accessViewStatus": "SAMPLE",
+                        "quoteSharingAllowed": false
+                    },
+                    "searchInfo": {
+                        "textSnippet": "A DANCE WITH DRAGONS: AFTER THE FEAST is the SECOND part of the fifth volume in the series. ‘Vivid, rich, multi-layered and utterly addictive’ Daily Express"
+                    }
+                },
+                {
+                    "kind": "books#volume",
+                    "id": "H6cPBAAAQBAJ",
+                    "etag": "aGPlYu0XJB0",
+                    "selfLink": "https://www.googleapis.com/books/v1/volumes/H6cPBAAAQBAJ",
+                    "volumeInfo": {
+                        "title": "Fire in the Blood",
+                        "authors": [
+                            "George McCartney"
+                        ],
+                        "publisher": "Troubador Publishing Ltd",
+                        "publishedDate": "2014-07-01",
+                        "description": "Join young Annie James as she begins her new job, working as a summer intern with Jack Davidson. She quickly finds out that this temporary gig is completely different from all the mind-numbing, zero-hours contracts she has endured since leaving college.",
+                        "industryIdentifiers": [
+                            {
+                                "type": "ISBN_13",
+                                "identifier": "9781784626846"
+                            },
+                            {
+                                "type": "ISBN_10",
+                                "identifier": "1784626848"
+                            }
+                        ],
+                        "readingModes": {
+                            "text": true,
+                            "image": true
+                        },
+                        "pageCount": 200,
+                        "printType": "BOOK",
+                        "categories": [
+                            "Fiction"
+                        ],
+                        "maturityRating": "NOT_MATURE",
+                        "allowAnonLogging": true,
+                        "contentVersion": "preview-1.0.0",
+                        "panelizationSummary": {
+                            "containsEpubBubbles": false,
+                            "containsImageBubbles": false
+                        },
+                        "imageLinks": {
+                            "smallThumbnail": "http://books.google.com/books/content?id=H6cPBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                            "thumbnail": "http://books.google.com/books/content?id=H6cPBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                        },
+                        "language": "en",
+                        "previewLink": "http://books.google.co.in/books?id=H6cPBAAAQBAJ&printsec=frontcover&dq=a+song+of+ice+and+fire&hl=&cd=3&source=gbs_api",
+                        "infoLink": "https://play.google.com/store/books/details?id=H6cPBAAAQBAJ&source=gbs_api",
+                        "canonicalVolumeLink": "https://market.android.com/details?id=book-H6cPBAAAQBAJ"
+                    },
+                    "saleInfo": {
+                        "country": "IN",
+                        "saleability": "FOR_SALE",
+                        "isEbook": true,
+                        "listPrice": {
+                            "amount": 180.01,
+                            "currencyCode": "INR"
+                        },
+                        "retailPrice": {
+                            "amount": 126.01,
+                            "currencyCode": "INR"
+                        },
+                        "buyLink": "https://play.google.com/store/books/details?id=H6cPBAAAQBAJ&rdid=book-H6cPBAAAQBAJ&rdot=1&source=gbs_api",
+                        "offers": [
+                            {
+                                "finskyOfferType": 1,
+                                "listPrice": {
+                                    "amountInMicros": 180010000,
+                                    "currencyCode": "INR"
+                                },
+                                "retailPrice": {
+                                    "amountInMicros": 126010000,
+                                    "currencyCode": "INR"
+                                }
+                            }
+                        ]
+                    },
+                    "accessInfo": {
+                        "country": "IN",
+                        "viewability": "PARTIAL",
+                        "embeddable": true,
+                        "publicDomain": false,
+                        "textToSpeechPermission": "ALLOWED",
+                        "epub": {
+                            "isAvailable": true,
+                            "acsTokenLink": "http://books.google.co.in/books/download/Fire_in_the_Blood-sample-epub.acsm?id=H6cPBAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                        },
+                        "pdf": {
+                            "isAvailable": true,
+                            "acsTokenLink": "http://books.google.co.in/books/download/Fire_in_the_Blood-sample-pdf.acsm?id=H6cPBAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                        },
+                        "webReaderLink": "http://play.google.com/books/reader?id=H6cPBAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                        "accessViewStatus": "SAMPLE",
+                        "quoteSharingAllowed": false
+                    },
+                    "searchInfo": {
+                        "textSnippet": "Join young Annie James as she begins her new job, working as a summer intern with Jack Davidson."
+                    }
+                }
+            ]
+        }
+    },
+    "parsedResp": [
+        {
+            "authors": [
+                "George R. R. Martin"
+            ],
+            "id": "mA8A4BYWB1IC",
+            "publisher": "Bantam",
+            "subtitle": "A Song of Ice and Fire Series: A Game of Thrones, A Clash of Kings, A Storm of Swords, and A Feast for Crows",
+            "thumbnail": "http://books.google.com/books/content?id=mA8A4BYWB1IC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "title": "A Game of Thrones 4-Book Bundle"
+        },
+        {
+            "authors": [
+                "George R.R. Martin"
+            ],
+            "id": "QlAnF4NFb6EC",
+            "publisher": "HarperCollins UK",
+            "thumbnail": "http://books.google.com/books/content?id=QlAnF4NFb6EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "title": "A Dance With Dragons: Part 2 After The Feast (A Song of Ice and Fire, Book 5)"
+        },
+        {
+            "authors": [
+                "George McCartney"
+            ],
+            "id": "H6cPBAAAQBAJ",
+            "publisher": "Troubador Publishing Ltd",
+            "thumbnail": "http://books.google.com/books/content?id=H6cPBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "title": "Fire in the Blood"
+        }
+    ]
+}

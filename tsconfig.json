@@ -11,7 +11,8 @@
         "baseUrl": "./src"
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./test/**/*"
     ],
     "awesomeTypescriptLoaderOptions": {
         "transpileOnly": true

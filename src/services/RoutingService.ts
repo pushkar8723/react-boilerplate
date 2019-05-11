@@ -35,49 +35,49 @@ export default class RoutingService extends ServiceBase {
     /**
      * Registers routes for appliaction
      */
-    public registerRoutes = (routes: IRouteState[]) => {
+    public registerRoutes(routes: IRouteState[]) {
         routes.forEach(state => this.router.stateRegistry.register(state));
     }
 
     /**
      * Sets starting route of application
      */
-    public setInitialState = (state: string) => {
+    public setInitialState(state: string) {
         this.router.urlService.rules.initial({ state });
     }
 
     /**
      * Sets fallback state for the application.
      */
-    public set404State = (state: string) => {
+    public set404State(state: string) {
         this.router.urlService.rules.otherwise({ state });
     }
 
     /**
      * Redirects to the given state.
      */
-    public goTo = (stateName: string, stateParams?: any) => {
+    public goTo(stateName: string, stateParams?: any) {
         this.router.stateService.go(stateName, stateParams);
     }
 
     /**
      * Returns the configured router.
      */
-    public getRouter = () => {
+    public getRouter() {
         return this.router;
     }
 
     /**
      * Registers hook function which is called before state transition is started.
      */
-    public registerBeforeHook = (callback: TransitionHookFn) => {
+    public registerBeforeHook(callback: TransitionHookFn) {
         this.router.transitionService.onBefore({}, callback);
     }
 
     /**
      * Registers hook function which is called when state transition is success.
      */
-    public registerSuccessHook = (callback: TransitionHookFn) => {
+    public registerSuccessHook(callback: TransitionHookFn) {
         this.router.transitionService.onSuccess({}, callback);
     }
 }
