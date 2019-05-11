@@ -2,6 +2,7 @@ import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
 import styled from 'styled-components';
 import bookIcon from '../../../images/bookIcon.png';
+import { Error404 } from '../../Error';
 
 const Container = styled.div`
     flex: 1;
@@ -159,8 +160,11 @@ class Detail extends React.Component<IDetailProps> {
      * Render method.
      */
     public render() {
-        if (this.props.global.inProgress || !this.props.scope.data) {
+        if (this.props.global.inProgress) {
             return <Loader centered={true} />;
+        }
+        if (!this.props.scope.data) {
+            return <Error404 />;
         }
         return this.renderBook();
     }

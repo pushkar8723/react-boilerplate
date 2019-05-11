@@ -1,6 +1,5 @@
 import ControllerBase from 'core/ControllerBase';
 import GoogleBooksService from 'services/GoogleBooksService';
-import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
 
 /**
  * Detail Controller
@@ -27,6 +26,10 @@ class DetailCtrl extends ControllerBase<any, any> {
             (resp: any) => {
                 this._setGlobal({ inProgress: false });
                 this._setScope({ data: resp.data });
+            },
+            () => {
+                this._setGlobal({ inProgress: false });
+                this._setScope({ data: undefined });
             },
         );
     }

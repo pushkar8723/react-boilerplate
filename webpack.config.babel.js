@@ -22,6 +22,7 @@ export default {
         filename: '[name].bundle.js',
         chunkFilename: '[name].[hash].js',
         path: `${__dirname}/dist`,
+        publicPath: '/'
     },
 
     // Enable sourcemaps for debugging webpack's output.

@@ -45,6 +45,13 @@ class HTTPService extends ServiceBase {
     }
 
     /**
+     * Returns axios interceptors.
+     */
+    public getInterceptors = () => {
+        return axios.interceptors;
+    }
+
+    /**
      * Generic HTTP request.
      * This is done so that developer can use any functionality
      * provided by axios. Here, only the set heards are spread

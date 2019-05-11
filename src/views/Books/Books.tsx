@@ -170,7 +170,7 @@ class Books extends React.Component<any, any> {
                     open={this.state.open}
                     headerContent={this.renderDrawerHeader()}
                     data={<React.Fragment>
-                        <ListItem href="#/" onClick={this.toggleDrawer}>
+                        <ListItem href="#/books" onClick={this.toggleDrawer}>
                             <MenuIcon className="material-icons">home</MenuIcon>
                             Home
                         </ListItem>
