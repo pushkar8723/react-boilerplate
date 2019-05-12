@@ -7,10 +7,10 @@
     "start": "NODE_ENV=development webpack-dev-server --mode development --inline --open --hot",
     "start-prod": "NODE_ENV=production webpack-dev-server --mode production",
     "build": "NODE_ENV=production webpack --mode production",
-    "lint": "eslint src/**/*.js; tslint -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json",
     "lint-staged": "lint-staged",
     "test": "jest --coverage",
-    "check-all": "lint-staged && npm test"
+    "check-all": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",
