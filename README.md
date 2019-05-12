@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pushkar8723/react-boilerplate.svg?branch=master)](https://travis-ci.org/pushkar8723/react-boilerplate)
+[![Build Status](https://travis-ci.org/pushkar8723/react-boilerplate.svg?branch=master)](https://travis-ci.org/pushkar8723/react-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/pushkar8723/react-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/pushkar8723/react-boilerplate?branch=master)
 
 React Boilerplate
 =================
