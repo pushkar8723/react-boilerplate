@@ -4,16 +4,15 @@ import RoutingService from 'services/RoutingService';
 import BooksCtrl from 'views/Books/BooksCtrl';
 import bookSearchResponse from './BooksSearch.json';
 
-let ctrl;
-let setScope;
-let setGlobal;
+let ctrl: BooksCtrl;
+let setScope: () => void;
+let setGlobal: () => void;
 const authMock = {
     email: 'pushkar8723@gmail.com',
 };
 jest.mock('services/LocalStorageService');
 jest.mock('services/RoutingService');
 jest.mock('services/GoogleBooksService');
-jest.useFakeTimers();
 
 describe('Books Controller Tests', () => {
     beforeEach(() => {
@@ -39,20 +38,37 @@ describe('Books Controller Tests', () => {
         expect(setGlobal).toHaveBeenCalledWith({ auth: authMock });
     });
 
-    it('Test Load Book', () => {
+    it('Test Load Book Success', () => {
         const googleBooksService = GoogleBooksService.mock.instances[0];
         googleBooksService.searchBooks = jest.fn(() =>
             Promise.resolve(bookSearchResponse.response));
 
-        expect.assertions(3);
+        expect.assertions(4);
 
         const promise = ctrl.loadBook('A song of ice and fire');
         expect(setGlobal).toHaveBeenCalledWith({ inProgress: true });
+        expect(googleBooksService.searchBooks).toHaveBeenCalledWith('A song of ice and fire');
         return promise.then(() => {
             expect(setGlobal).toHaveBeenCalledWith({ inProgress: false });
             expect(setScope).toHaveBeenCalledWith({
                 books: bookSearchResponse.parsedResp,
             });
+        });
+
+    });
+
+    it('Test Load Book Failure', () => {
+        const googleBooksService = GoogleBooksService.mock.instances[0];
+        googleBooksService.searchBooks = jest.fn(() =>
+            Promise.reject('Error'));
+
+        expect.assertions(3);
+
+        const promise = ctrl.loadBook('A song of ice and fire');
+        expect(setGlobal).toHaveBeenCalledWith({ inProgress: true });
+        expect(googleBooksService.searchBooks).toHaveBeenCalledWith('A song of ice and fire');
+        return promise.then(() => {
+            expect(setGlobal).toHaveBeenCalledWith({ inProgress: false });
         });
 
     });

@@ -1,0 +1,88 @@
+{
+    "response": {
+        "data": {
+            "kind": "books#volume",
+            "id": "mA8A4BYWB1IC",
+            "etag": "sRY4VsFynTc",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/mA8A4BYWB1IC",
+            "volumeInfo": {
+                "title": "A Game of Thrones 4-Book Bundle",
+                "subtitle": "A Song of Ice and Fire Series: A Game of Thrones, A Clash of Kings, A Storm of Swords, and A Feast for Crows",
+                "authors": [
+                    "George R. R. Martin"
+                ],
+                "publisher": "Random House Publishing Group",
+                "publishedDate": "2011-03-22",
+                "description": "<b>The perfect gift for fans of HBO's <i>Game of Thrones</i>—a boxed set featuring the first four novels!</b><br><br>George R. R. Martin's A Song of Ice and Fire series has become, in many ways, the gold standard for modern epic fantasy. Martin—dubbed the \"American Tolkien\" by <i>Time</i> magazine—has created a world that is as rich and vital as any piece of historical fiction, set in an age of knights and chivalry and filled with a plethora of fascinating, multidimensional characters that you love, hate to love, or love to hate as they struggle for control of a divided kingdom. <br><br><b>This bundle includes the following novels:</b><br><b> A GAME OF THRONES</b><br><b> A CLASH OF KINGS</b><br><b> A STORM OF SWORDS</b><br><b> A FEAST FOR CROWS<br><br><br></b>",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0345529065"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780345529060"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 3264,
+                "printedPageCount": 3441,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction / Fantasy / Epic",
+                    "Fiction / Media Tie-In",
+                    "Fiction / Action & Adventure"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 306,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "4.25.15.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=mA8A4BYWB1IC&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE72MejKbY4IY7zIVpT7CNi5QAiE5Fn1jguN79DbyulD5hNgQv3vvtkf8HzPbGv42hbgWNJQKJzXD1SEWoLEbdJb4pS-IPxY2c4ePEdfWtYUnvJQpex0pHMJgsEHSs0bLAaesBtO_&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=mA8A4BYWB1IC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73hJypxBQH246-1r3EseXvrLjO106Ets8bxH-G1ExHm1G5vyYqCb0aalIn_QikA01f3i4rhAFNuJqCopTzx7Cy7AuIEKGVZmCT24kWSqIMX06JwP4UqqAk6eW80C4lXX-oH4biH&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.co.in/books?id=mA8A4BYWB1IC&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=mA8A4BYWB1IC&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-mA8A4BYWB1IC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "23"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "IN",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "IN",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true
+                },
+                "pdf": {
+                    "isAvailable": true
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=mA8A4BYWB1IC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            }
+        }
+    }
+}

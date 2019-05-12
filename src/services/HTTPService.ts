@@ -33,7 +33,7 @@ class HTTPService extends ServiceBase {
     public appendHeader(key: string, value: string) {
         this.headers = {
             ...this.headers,
-            key: value,
+            [key]: value,
         };
     }
 

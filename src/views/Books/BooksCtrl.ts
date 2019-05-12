@@ -2,6 +2,7 @@ import ControllerBase from 'core/ControllerBase';
 import GoogleBooksService from 'services/GoogleBooksService';
 import LocalStorageService from 'services/LocalStorageService';
 import RoutingService from 'services/RoutingService';
+import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
 
 /**
  * Books Ctrl
@@ -58,6 +59,11 @@ class BooksCtrl extends ControllerBase<any, any> {
             },
             (error: any) => {
                 this._setGlobal({ inProgress: false });
+                Notification.add(NOTIFICATION_POSITION.TOP_RIGHT, {
+                    content: 'Search request failed. If error persists, contact admin.',
+                    state: 'danger',
+                    title: 'Unable to search. Try again.',
+                });
             },
         );
     }

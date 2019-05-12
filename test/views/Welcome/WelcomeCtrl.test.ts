@@ -1,11 +1,10 @@
-import expect from 'expect';
 import LocalStorage from 'services/LocalStorageService';
 import RoutingService from 'services/RoutingService';
 import WelcomeCtrl from 'views/Welcome/WelcomeCtrl';
 
 let ctrl;
 let setScope;
-let setGlobal;
+let setGlobal: () => void;
 const mockData = {
     email: 'pushkar8723@gmail.com',
     familyName: 'Anand',

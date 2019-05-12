@@ -13,12 +13,7 @@ class GoogleBooksService extends ServiceBase {
     /**
      * Reference for HTTP service.
      */
-    private httpService: HTTPService;
-
-    constructor() {
-        super();
-        this.httpService = new HTTPService();
-    }
+    private httpService = new HTTPService();
 
     /**
      * API to search for book by name.
