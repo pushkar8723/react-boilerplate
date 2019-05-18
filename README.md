@@ -11,6 +11,7 @@ Just clone and start building pages. Maybe delete a few files first. :stuck_out_
 
 - [X] Complete MVC architechture
 - [X] Application State management
+- [X] Immutable state
 - [X] Routing with nested routes and lazy load
 - [X] Build pipeline
 - [X] Test pipeline
@@ -168,7 +169,7 @@ it('Test Get', () => {
 ```
 
 ### Nice! Any future milestone? :grin:
-Well yes, I will soon seprate out state management logic and publish a npm package. Also, I will try to onboard atlease one other component rendering library (vue or polymer) to see how much of this code can be reused.
+Well yes, I will soon separate out state management logic and publish a npm package. Also, I will try to onboard atlease one other component rendering library (vue or polymer) to see how much of this code can be reused.
 
 SSR / pre-rendering with browser history api usage is also on top of my list right now.
 
