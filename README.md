@@ -86,7 +86,7 @@ Services are used to store application logic which are required across views lik
 These are just plain classes. Only thing that needs to be done is extend `ServiceBase` class. Extending `ServiceBase` class makes them singleton classes.
 
 ##### 5. Initializing Application
-`initApp` method initializes the application and returns a react component which needs to be mounted on dom using `ReactDom.render`. Before calling `ReactDom.render`, routes should be configured. Refer [app file](https://github.com/pushkar8723/react-boilerplate/blob/master/src/app.tsx) where I initialized this demo application.
+`initApp` method initializes the application and returns a react component which needs to be mounted on dom using `ReactDom.render`. Before calling `ReactDom.render`, routes should be configured. Refer [app file](https://github.com/pushkar8723/react-boilerplate/blob/master/src/app.ts) where I initialized this demo application.
 
 Ands thats all you need to know.
 

@@ -17,7 +17,7 @@ const config = {
 };
 
 export default {
-    entry: './src/app.tsx',
+    entry: './src/app.ts',
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].[hash].js',
