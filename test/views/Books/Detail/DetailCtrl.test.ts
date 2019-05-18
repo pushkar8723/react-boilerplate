@@ -21,11 +21,9 @@ describe('Detail Controller Test', () => {
             Promise.resolve(bookDetail.response));
 
         const promise = ctrl.getBook('abc');
-        expect.assertions(4);
-        expect(setGlobal).toHaveBeenCalledWith({ inProgress: true });
-        expect(googleBooksService.getBook).toHaveBeenCalledWith('abc');
+        expect.assertions(2);
+        expect(googleBooksService.getBook).toHaveBeenCalledWith('abc', true);
         return promise.then(() => {
-            expect(setGlobal).toHaveBeenCalledWith({ inProgress: false });
             expect(setScope).toHaveBeenCalledWith(bookDetail.response);
         });
     });
@@ -36,11 +34,9 @@ describe('Detail Controller Test', () => {
             Promise.reject('Error'));
 
         const promise = ctrl.getBook('abc');
-        expect.assertions(4);
-        expect(setGlobal).toHaveBeenCalledWith({ inProgress: true });
-        expect(googleBooksService.getBook).toHaveBeenCalledWith('abc');
+        expect.assertions(2);
+        expect(googleBooksService.getBook).toHaveBeenCalledWith('abc', true);
         return promise.then(() => {
-            expect(setGlobal).toHaveBeenCalledWith({ inProgress: false });
             expect(setScope).toHaveBeenCalledWith({ data: undefined });
         });
     });

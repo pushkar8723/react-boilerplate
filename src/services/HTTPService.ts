@@ -57,63 +57,74 @@ class HTTPService extends ServiceBase {
      * provided by axios. Here, only the set heards are spread
      * over what was sent in config.
      */
-    public request(config: AxiosRequestConfig) {
+    public request(config: AxiosRequestConfig, customConfig?: any) {
         config.headers = {
             ...this.headers,
             ...config.headers,
         };
-        return axios(config);
+        return axios({ ...config, ...customConfig });
     }
 
     /**
      * Get request.
      */
-    public get(url: string, params?: IQueryPrams, headers?: IHTTPHeaders) {
-        return this.request({
-            headers,
-            method: 'GET',
-            params,
-            url,
-        });
+    public get(url: string, params?: IQueryPrams, headers?: IHTTPHeaders, customConfig?: any) {
+        return this.request(
+            {
+                headers,
+                method: 'GET',
+                params,
+                url,
+            },
+            customConfig);
     }
 
     /**
      * Post request
      */
-    public post(url: string, data?: any, params?: IQueryPrams, headers?: IHTTPHeaders) {
-        return this.request({
-            data,
-            headers,
-            method: 'POST',
-            params,
-            url,
-        });
+    public post(url: string, data?: any, params?: IQueryPrams,
+                headers?: IHTTPHeaders, customConfig?: any) {
+        return this.request(
+            {
+                data,
+                headers,
+                method: 'POST',
+                params,
+                url,
+            },
+            customConfig);
     }
 
     /**
      * Put request
      */
-    public put(url: string, data: any, params?: IQueryPrams, headers?: IHTTPHeaders) {
-        return this.request({
-            data,
-            headers,
-            method: 'PUT',
-            params,
-            url,
-        });
+    public put(url: string, data: any, params?: IQueryPrams,
+               headers?: IHTTPHeaders, customConfig?: any) {
+        return this.request(
+            {
+                data,
+                headers,
+                method: 'PUT',
+                params,
+                url,
+            },
+            customConfig);
     }
 
     /**
      * Delete request
      */
-    public delete(url: string, data: any, params?: IQueryPrams, headers?: IHTTPHeaders) {
-        return this.request({
-            data,
-            headers,
-            method: 'DELETE',
-            params,
-            url,
-        });
+    public delete(url: string, data: any, params?: IQueryPrams,
+                  headers?: IHTTPHeaders, customConfig?: any) {
+        return this.request(
+            {
+                data,
+                headers,
+                method: 'DELETE',
+                params,
+                url,
+            },
+            customConfig);
     }
 }
 

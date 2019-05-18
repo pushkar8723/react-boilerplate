@@ -104,9 +104,6 @@ class Books extends React.Component<IBooksProps, IBooksState> {
             inputText: '',
             open: false,
         };
-        if (!this.props.global.auth) {
-            this.props.updateGlobalAuth();
-        }
     }
 
     /**

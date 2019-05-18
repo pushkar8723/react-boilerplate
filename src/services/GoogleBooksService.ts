@@ -59,8 +59,8 @@ class GoogleBooksService extends ServiceBase {
     /**
      * API to get book by ID
      */
-    public getBook(id: string): AxiosPromise<IBookDetail> {
-        return this.httpService.get(`${this.endpoint}/volumes/${id}`);
+    public getBook(id: string, errorHandled?: boolean): AxiosPromise<IBookDetail> {
+        return this.httpService.get(`${this.endpoint}/volumes/${id}`, null, null, { errorHandled });
     }
 }
 

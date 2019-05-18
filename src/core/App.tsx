@@ -6,11 +6,14 @@ import { Provider } from 'react-redux';
 import { compose, createStore } from 'redux';
 import RoutingService from 'services/RoutingService';
 import model from './model';
+import { GlobalActions } from './model/globalReducer';
 
 /**
  * Creates a new app with store and router configured.
  */
-export function initApp(): JSX.Element {
+export function initApp<G>(
+    config?: (setGlobal: <K extends keyof G>(payload: Pick<G, K>) => void) => void,
+): JSX.Element {
     const routingService = new RoutingService();
     const middlewares: any = [];
 
@@ -24,6 +27,21 @@ export function initApp(): JSX.Element {
       model,
       compose.apply(this, middlewares),
     );
+
+    /**
+     * Callback function to update global scope.
+     * @param payload
+     */
+    function configFn<K extends keyof G>(payload: Pick<G, K>) {
+        store.dispatch({
+            payload,
+            scopeName: 'CONFIG',
+            type: GlobalActions.UPDATE_GLOBAL,
+        });
+    }
+
+    // tslint:disable-next-line: no-unused-expression
+    config && config(configFn);
 
     // Registering hook to clear states of previous routes.
     routingService.registerSuccessHook((transition: Transition) => {

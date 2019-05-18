@@ -20,14 +20,11 @@ class DetailCtrl extends ControllerBase<IDetailState, IGlobal> {
      * @param id
      */
     public getBook = (id: string) => {
-        this._setGlobal({ inProgress: true });
-        return this._googleBooksService.getBook(id).then(
+        return this._googleBooksService.getBook(id, true).then(
             (resp) => {
-                this._setGlobal({ inProgress: false });
                 this._setScope({ data: resp.data });
             },
             () => {
-                this._setGlobal({ inProgress: false });
                 this._setScope({ data: undefined });
             },
         );

@@ -24,51 +24,19 @@ describe('Books Controller Tests', () => {
         ctrl = new BooksCtrl({}, setScope, {}, setGlobal);
     });
 
-    it('Test Update Global Auth', () => {
-        const localStorageInstance = LocalStorage.mock.instances[0];
-        localStorageInstance.get = jest.fn(() => authMock);
-        const getMock = localStorageInstance.get;
-
-        ctrl.updateGlobalAuth();
-
-        expect(getMock.mock.calls.length).toBe(1);
-        expect(getMock).toHaveBeenCalledWith('auth');
-
-        expect(setGlobal.mock.calls.length).toBe(1);
-        expect(setGlobal).toHaveBeenCalledWith({ auth: authMock });
-    });
-
     it('Test Load Book Success', () => {
         const googleBooksService = GoogleBooksService.mock.instances[0];
         googleBooksService.searchBooks = jest.fn(() =>
             Promise.resolve(bookSearchResponse.response));
 
-        expect.assertions(4);
+        expect.assertions(2);
 
         const promise = ctrl.loadBook('A song of ice and fire');
-        expect(setGlobal).toHaveBeenCalledWith({ inProgress: true });
         expect(googleBooksService.searchBooks).toHaveBeenCalledWith('A song of ice and fire');
         return promise.then(() => {
-            expect(setGlobal).toHaveBeenCalledWith({ inProgress: false });
             expect(setScope).toHaveBeenCalledWith({
                 books: bookSearchResponse.parsedResp,
             });
-        });
-
-    });
-
-    it('Test Load Book Failure', () => {
-        const googleBooksService = GoogleBooksService.mock.instances[0];
-        googleBooksService.searchBooks = jest.fn(() =>
-            Promise.reject('Error'));
-
-        expect.assertions(3);
-
-        const promise = ctrl.loadBook('A song of ice and fire');
-        expect(setGlobal).toHaveBeenCalledWith({ inProgress: true });
-        expect(googleBooksService.searchBooks).toHaveBeenCalledWith('A song of ice and fire');
-        return promise.then(() => {
-            expect(setGlobal).toHaveBeenCalledWith({ inProgress: false });
         });
 
     });

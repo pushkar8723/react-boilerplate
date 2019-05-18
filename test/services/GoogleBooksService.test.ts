@@ -34,6 +34,9 @@ describe('Test Google Books Service', () => {
     it('Test Get Book', () => {
         const httpServiceInstance = HTTPService.mock.instances[0];
         service.getBook('test');
-        expect(httpServiceInstance.get).toHaveBeenCalledWith(`${endpoint}/volumes/test`);
+        expect(httpServiceInstance.get).toHaveBeenCalledWith(
+            `${endpoint}/volumes/test`, null, null,
+            { errorHandled: undefined },
+        );
     });
 });
