@@ -1,4 +1,5 @@
 import { UIView } from '@uirouter/react';
+import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Drawer from 'sleek-ui/Drawer';
 import styled from 'styled-components';
@@ -74,7 +75,7 @@ const ListItem = styled.a`
     cursor: pointer;
 
     &:hover {
-        background-color: #f2f2f2;ß
+        background-color: #f2f2f2;
     }
 `;
 
@@ -82,11 +83,22 @@ const NameContainer = styled.h4`
     margin-bottom: 8px;
 `;
 
+interface IBooksProps extends IInjectedProps<IGlobal, IBooksState> {
+    updateGlobalAuth: () => void;
+    loadBook: (bookName: string) => void;
+    logout: () => void;
+}
+
+interface IBooksState {
+    inputText: string;
+    open: boolean;
+}
+
 /**
  * Root Books class
  */
-class Books extends React.Component<any, any> {
-    constructor(props: any) {
+class Books extends React.Component<IBooksProps, IBooksState> {
+    constructor(props: IBooksProps) {
         super(props);
         this.state = {
             inputText: '',
@@ -137,7 +149,7 @@ class Books extends React.Component<any, any> {
     /**
      * Search for a Book.
      */
-    private searchBook = (event: React.SyntheticEvent<any>) => {
+    private searchBook = (event: React.SyntheticEvent) => {
         event.preventDefault();
         this.props.loadBook(this.state.inputText);
         return false;

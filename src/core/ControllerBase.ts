@@ -15,15 +15,15 @@ class ControllerBase<S, G> {
     /**
      * Function to set local scope.
      */
-    protected _setScope: (scope: S) => void;
+    protected _setScope: <K extends keyof S>(scope: Pick<S, K>) => void;
 
     /**
      * Function to set global scope.
      */
-    protected _setGlobal: (global: G) => void;
+    protected _setGlobal: <K extends keyof G>(global: Pick<G, K>) => void;
 
-    constructor(scope: S, setScope: (scope: S) => void,
-                global: G, setGlobal: (global: G) => void) {
+    constructor(scope: S, setScope: <K extends keyof S>(scope: Pick<S, K>) => void,
+                global: G, setGlobal: <K extends keyof G>(global: Pick<G, K>) => void) {
         this._global = global;
         this._scope = scope;
         this._setScope = setScope;

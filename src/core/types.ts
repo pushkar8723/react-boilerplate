@@ -1,4 +1,6 @@
+import { UIViewInjectedProps } from '@uirouter/react';
 import { ComponentType } from 'react';
+import ControllerBase from './ControllerBase';
 
 export enum AccessType {
     ALL = 'all',
@@ -6,7 +8,7 @@ export enum AccessType {
     AUTHENTICATED = 'authenticated',
 }
 
-export interface IRouteState {
+export interface IRouteState<D> {
     /**
      * Name of the route
      */
@@ -14,20 +16,11 @@ export interface IRouteState {
     /**
      * Controller for the component
      */
-    controller?: any;
+    controller?: ControllerBase<any, any>;
     /**
      * Route data object
      */
-    data?: {
-        /**
-         * Allowed access type for the route
-         */
-        access: AccessType,
-        /**
-         * Title of the page
-         */
-        pageTitle: string,
-    };
+    data?: D;
     /**
      * Component to be rendered.
      */
@@ -44,4 +37,14 @@ export interface IRouteState {
      * Lazy loaded function
      */
     lazyLoad?: () => Promise<any>;
+}
+
+export interface IInjectedProps<G, S> extends UIViewInjectedProps {
+    global: G;
+    scope: S;
+}
+
+export interface IGlobal {
+    auth: any;
+    inProgress: boolean;
 }

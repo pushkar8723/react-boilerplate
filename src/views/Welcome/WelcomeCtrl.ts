@@ -1,11 +1,12 @@
 import ControllerBase from 'core/ControllerBase';
+import { IGlobal } from 'core/types';
 import LocalStorageService from 'services/LocalStorageService';
 import RoutingService from 'services/RoutingService';
 
 /**
  * Welcome Controller
  */
-class WelcomeCtrl extends ControllerBase<any, any> {
+class WelcomeCtrl extends ControllerBase<undefined, IGlobal> {
     /**
      * Local storage service
      */

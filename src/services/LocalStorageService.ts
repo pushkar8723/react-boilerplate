@@ -7,7 +7,7 @@ export default class LocalStorageService extends ServiceBase {
     /**
      * Returns the value for the given key.
      */
-    public get(key: string) {
+    public get(key: string): any {
         return JSON.parse(localStorage.getItem(key));
     }
 

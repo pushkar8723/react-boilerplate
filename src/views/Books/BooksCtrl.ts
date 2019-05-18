@@ -1,13 +1,27 @@
 import ControllerBase from 'core/ControllerBase';
+import { IGlobal } from 'core/types';
 import GoogleBooksService from 'services/GoogleBooksService';
 import LocalStorageService from 'services/LocalStorageService';
 import RoutingService from 'services/RoutingService';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
 
+export interface IBooksState {
+    books: IBookListItem[];
+}
+
+export interface IBookListItem {
+    authors: string[];
+    id: string;
+    publisher: string;
+    subtitle: string;
+    thumbnail?: string;
+    title: string;
+}
+
 /**
  * Books Ctrl
  */
-class BooksCtrl extends ControllerBase<any, any> {
+class BooksCtrl extends ControllerBase<IBooksState, IGlobal> {
     /**
      * Local Storage Service
      */
@@ -42,9 +56,9 @@ class BooksCtrl extends ControllerBase<any, any> {
         this._setGlobal({ inProgress: true });
         this._routingService.goTo('books.search');
         return this._googleBooksService.searchBooks(bookName).then(
-            (resp: any) => {
+            (resp) => {
                 this._setGlobal({ inProgress: false });
-                const books = resp.data.items.map((book: any) => {
+                const books = resp.data.items.map((book) => {
                     return {
                         authors: book.volumeInfo.authors,
                         id: book.id,
@@ -57,7 +71,7 @@ class BooksCtrl extends ControllerBase<any, any> {
                 });
                 this._setScope({ books });
             },
-            (error: any) => {
+            () => {
                 this._setGlobal({ inProgress: false });
                 Notification.add(NOTIFICATION_POSITION.TOP_RIGHT, {
                     content: 'Search request failed. If error persists, contact admin.',

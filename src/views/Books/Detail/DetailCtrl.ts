@@ -1,10 +1,15 @@
 import ControllerBase from 'core/ControllerBase';
-import GoogleBooksService from 'services/GoogleBooksService';
+import { IGlobal } from 'core/types';
+import GoogleBooksService, { IBookDetail } from 'services/GoogleBooksService';
+
+export interface IDetailState {
+    data: IBookDetail;
+}
 
 /**
  * Detail Controller
  */
-class DetailCtrl extends ControllerBase<any, any> {
+class DetailCtrl extends ControllerBase<IDetailState, IGlobal> {
     /**
      * Google Book Service
      */
@@ -17,7 +22,7 @@ class DetailCtrl extends ControllerBase<any, any> {
     public getBook = (id: string) => {
         this._setGlobal({ inProgress: true });
         return this._googleBooksService.getBook(id).then(
-            (resp: any) => {
+            (resp) => {
                 this._setGlobal({ inProgress: false });
                 this._setScope({ data: resp.data });
             },

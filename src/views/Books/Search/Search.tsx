@@ -1,3 +1,4 @@
+import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
 import styled from 'styled-components';
@@ -66,12 +67,9 @@ interface IBook {
     thumbnail: string;
 }
 
-interface ISearchProps {
-    global: any;
-    scope: {
-        books: IBook[];
-    };
-}
+interface ISearchProps extends IInjectedProps<IGlobal, {
+    books: IBook[];
+}> {}
 
 /**
  * Books Search page.

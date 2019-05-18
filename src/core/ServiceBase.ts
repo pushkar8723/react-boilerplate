@@ -7,7 +7,7 @@ export default class ServiceBase {
      * Maintains the map of instance of the services.
      */
     private static instance: {
-        [serviceName: string]: any,
+        [serviceName: string]: ServiceBase,
     } = {};
 
     constructor() {

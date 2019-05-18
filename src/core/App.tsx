@@ -1,16 +1,16 @@
 import { Transition } from '@uirouter/core';
 import { UIRouter, UIView } from '@uirouter/react';
-import { ScopeActions } from 'model/scopeReducer';
+import { ScopeActions } from 'core/model/scopeReducer';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { compose, createStore } from 'redux';
 import RoutingService from 'services/RoutingService';
-import model from '../model';
+import model from './model';
 
 /**
  * Creates a new app with store and router configured.
  */
-export function initApp() {
+export function initApp(): JSX.Element {
     const routingService = new RoutingService();
     const middlewares: any = [];
 

@@ -1,8 +1,10 @@
+import {  IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
 import styled from 'styled-components';
 import bookIcon from '../../../images/bookIcon.png';
 import { Error404 } from '../../Error';
+import { IDetailState } from './DetailCtrl';
 
 const Container = styled.div`
     flex: 1;
@@ -52,33 +54,7 @@ const P = styled.div`
     margin-bottom: 10px;
 `;
 
-interface IISBN {
-    type: string;
-    identifier: number;
-}
-
-interface IDetailProps {
-    global: any;
-    scope: {
-        data: {
-            id: string,
-            volumeInfo: {
-                authors: string[],
-                averageRating: number,
-                categories: string[],
-                description: string,
-                imageLinks: {
-                    thumbnail: string,
-                }
-                industryIdentifiers: IISBN[],
-                pageCount: number,
-                publisher: string,
-                ratingsCount: number,
-                subtitle: string,
-                title: string,
-            },
-        },
-    };
+interface IDetailProps extends IInjectedProps<IGlobal, IDetailState> {
     getBook: (bookId: string) => void;
 }
 
@@ -86,7 +62,7 @@ interface IDetailProps {
  * Books Detail page's component
  */
 class Detail extends React.Component<IDetailProps> {
-    constructor(props: any) {
+    constructor(props: IDetailProps) {
         super(props);
         this.props.getBook(props.$stateParams.id);
     }

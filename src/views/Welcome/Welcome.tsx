@@ -1,3 +1,4 @@
+import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
@@ -41,7 +42,7 @@ const LogoImage = styled.img`
     z-index: 1;
 `;
 
-interface IWelcomeProps {
+interface IWelcomeProps extends IInjectedProps<IGlobal, undefined> {
     /**
      * Logs in the user
      */
@@ -51,7 +52,7 @@ interface IWelcomeProps {
 /**
  * Test class
  */
-class Welcome extends React.Component<IWelcomeProps, {}> {
+class Welcome extends React.Component<IWelcomeProps> {
     /**
      * Shows error notification in case of failed login attempt.
      */

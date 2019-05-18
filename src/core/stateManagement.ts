@@ -1,10 +1,9 @@
-import { IModel } from 'model';
-import { GlobalActions } from 'model/globalReducer';
-import { ScopeActions } from 'model/scopeReducer';
+import { GlobalActions } from 'core/model/globalReducer';
+import { ScopeActions } from 'core/model/scopeReducer';
 import { ComponentType } from 'react';
 import { connect } from 'react-redux';
 import ControllerBase from './ControllerBase';
-import { IRouteState } from './types';
+import { AccessType, IRouteState } from './types';
 
 /**
  * Takes in payload to genrate global actions.
@@ -129,7 +128,7 @@ function mapCtrl(controller: any) {
  * @param state
  * @param scopeName
  */
-function getScope(state: IModel, scopeName: string) {
+function getScope(state: any, scopeName: string) {
     const pojoScope = state.scopes.get(scopeName);
     const scope = {
         ...(pojoScope && pojoScope.toJS()),
@@ -148,10 +147,10 @@ function getScope(state: IModel, scopeName: string) {
  * @param component
  * @param controller
  */
-export function bindMVC<S, G>(component: ComponentType, scopeName: string,
-                              controller?: ControllerBase<S, G>) {
+export function bindMVC(component: ComponentType, scopeName: string,
+                        controller?: ControllerBase<any, any>) {
     return connect(
-        (state: IModel): any => {
+        (state: any): any => {
             return {
                 global: state.global.toJS(),
                 scope: getScope(state, scopeName),
@@ -162,7 +161,7 @@ export function bindMVC<S, G>(component: ComponentType, scopeName: string,
         },
         (stateProps: any, dispatchProps: any, ownProps: any) => {
             const dispatch = dispatchProps.dispatch;
-            let ctrl: ControllerBase<S, G>;
+            let ctrl: ControllerBase<any, any>;
             if (controller) {
                 ctrl = new controller(
                     stateProps.scope,
@@ -182,13 +181,24 @@ export function bindMVC<S, G>(component: ComponentType, scopeName: string,
     )(component);
 }
 
+interface IRouteData {
+    /**
+     * Allowed access type for the route
+     */
+    access: AccessType;
+    /**
+     * Title of the page
+     */
+    pageTitle: string;
+}
+
 /**
  * Takes in a route state and returns transformed state that can be
  * plugged into UI router.
  *
  * @param routeState
  */
-export function createRoute(routeState: IRouteState) {
+export function createRoute(routeState: IRouteState<IRouteData>) {
     return {
         component: routeState.component
             ? bindMVC(routeState.component, routeState.name, routeState.controller)
