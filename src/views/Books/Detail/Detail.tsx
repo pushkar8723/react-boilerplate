@@ -39,13 +39,17 @@ const Title = styled.h1`
     margin: 0 0 5px 0;
 `;
 
-const DescriptionContainer = styled.p`
+const DescriptionContainer = styled.div`
     text-align: justify;
 `;
 
 const Label = styled.div`
     font-size: 12px;
     font-weight: bold;
+`;
+
+const P = styled.div`
+    margin-bottom: 10px;
 `;
 
 interface IISBN {
@@ -125,23 +129,23 @@ class Detail extends React.Component<IDetailProps> {
                 </DescriptionContainer>
                 <DescriptionContainer>
                     <h3>Additional Information</h3>
-                    <p>
+                    <P>
                         <Label>Page Count</Label>
                         <div>{volumeInfo.pageCount}</div>
-                    </p>
+                    </P>
                     {
                         volumeInfo.categories &&
-                        <p>
+                        <P>
                             <Label>Categories</Label>
                             <div>
                                 {volumeInfo.categories.map(category =>
                                     <div key={category}>{category}</div>)}
                             </div>
-                        </p>
+                        </P>
                     }
                     {
                         volumeInfo.industryIdentifiers &&
-                        <p>
+                        <P>
                             <Label>ISBN</Label>
                             <div>
                                 {volumeInfo.industryIdentifiers.map(identifier =>
@@ -149,7 +153,7 @@ class Detail extends React.Component<IDetailProps> {
                                         {identifier.type} : {identifier.identifier}
                                     </div>)}
                             </div>
-                        </p>
+                        </P>
                     }
                 </DescriptionContainer>
             </Container>

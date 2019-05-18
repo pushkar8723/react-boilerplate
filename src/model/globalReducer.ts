@@ -1,4 +1,6 @@
-const defaultState = {};
+import { fromJS } from 'immutable';
+
+const defaultState = fromJS({});
 export enum GlobalActions {
     UPDATE_GLOBAL = 'UPDATE_GLOBAL',
 }
@@ -22,13 +24,14 @@ interface IAction {
  * @param action
  */
 export default function globalReducer(state: any = defaultState, action: IAction) {
+    const pojoState = state.toJS();
     switch (action.type) {
     case GlobalActions.UPDATE_GLOBAL:
-        return {
-            ...state,
+        return fromJS({
+            ...pojoState,
             ...action.payload,
-        };
+        });
     default:
-        return state;
+        return fromJS(state);
     }
 }

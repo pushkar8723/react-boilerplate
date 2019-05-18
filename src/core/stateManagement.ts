@@ -1,6 +1,6 @@
 import { IModel } from 'model';
 import { GlobalActions } from 'model/globalReducer';
-import scopeReducer, { ScopeActions } from 'model/scopeReducer';
+import { ScopeActions } from 'model/scopeReducer';
 import { ComponentType } from 'react';
 import { connect } from 'react-redux';
 import ControllerBase from './ControllerBase';
@@ -130,8 +130,9 @@ function mapCtrl(controller: any) {
  * @param scopeName
  */
 function getScope(state: IModel, scopeName: string) {
+    const pojoScope = state.scopes.get(scopeName);
     const scope = {
-        ...state.scopes[scopeName],
+        ...(pojoScope && pojoScope.toJS()),
     };
     const parentScopeName = scopeName.split('.').slice(0, -1).join('.');
     if (parentScopeName.length > 0) {
@@ -152,7 +153,7 @@ export function bindMVC<S, G>(component: ComponentType, scopeName: string,
     return connect(
         (state: IModel): any => {
             return {
-                global: state.global,
+                global: state.global.toJS(),
                 scope: getScope(state, scopeName),
             };
         },
@@ -167,7 +168,7 @@ export function bindMVC<S, G>(component: ComponentType, scopeName: string,
                     stateProps.scope,
                     (scope: S) => dispatch(mapPayloadToAction(scopeName, setScope(scope))),
                     stateProps.global,
-                    (global: S) => dispatch(mapPayloadToAction(scopeName, setGlobal(global))),
+                    (global: G) => dispatch(mapPayloadToAction(scopeName, setGlobal(global))),
                 );
             }
             return {

@@ -1,4 +1,6 @@
-const defaultState = {};
+import { fromJS } from 'immutable';
+
+const defaultState = fromJS({});
 export enum ScopeActions {
     UPDATE_SCOPE = 'UPDATE_SCOPE',
     CLEAR_SOCPE = 'CLEAR_SCOPE',
@@ -27,21 +29,22 @@ interface IAction {
  * @param action
  */
 export default function scopeReducer(state: any = defaultState, action: IAction) {
+    const pojoState = state.toJS();
     switch (action.type) {
     case ScopeActions.UPDATE_SCOPE:
-        return {
-            ...state,
+        return fromJS({
+            ...pojoState,
             [action.scopeName]: {
-                ...state[action.scopeName],
+                ...pojoState[action.scopeName],
                 ...action.payload,
             },
-        };
+        });
     case ScopeActions.CLEAR_SOCPE:
-        return {
-            ...state,
+        return fromJS({
+            ...pojoState,
             [action.scopeName]: undefined,
-        };
+        });
     default:
-        return state;
+        return fromJS(pojoState);
     }
 }
