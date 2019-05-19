@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import CompressionPlugin from 'compression-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const mode = process.env.NODE_ENV;
@@ -11,6 +12,10 @@ const htmlPlugin = new HtmlWebPackPlugin({
     template: './src/index.html',
     filename: './index.html',
 });
+
+const copyPlugin = new CopyPlugin([
+    { from: './_redirects', to: './'}
+]);
 
 const config = {
     __MODE__: JSON.stringify(mode || 'production'),
@@ -93,5 +98,6 @@ export default {
         ...(isProduction ? [ new BundleAnalyzerPlugin({
             analyzerMode: 'static',
         })] : []),
+        copyPlugin
     ],
 };
