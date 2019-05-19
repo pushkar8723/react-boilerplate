@@ -11,6 +11,7 @@ const Toolbar = styled.div`
     padding: 0 4px 0 16px;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
     justify-content: center;
+    z-index: 1;
 `;
 
 const Form = styled.form`
