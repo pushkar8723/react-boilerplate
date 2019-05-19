@@ -34,6 +34,7 @@ export default {
             ignored: /node_modules/,
         },
         host: '0.0.0.0',
+        historyApiFallback: true
     },
 
     resolve: {

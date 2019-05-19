@@ -1,3 +1,4 @@
+import { UISref } from '@uirouter/react';
 import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
@@ -80,17 +81,19 @@ export default class Search extends React.Component<ISearchProps> {
      */
     private renderListItem = (book: IBook) => {
         return (
-            <ListItem key={book.id} href={`#/books/${book.id}`}>
-                <ThumbnailContainer>
-                    <img src={book.thumbnail || bookIcon} />
-                </ThumbnailContainer>
-                <TextContainer>
-                    <h4>{book.title}</h4>
-                    <div>{book.subtitle}</div>
-                    <div>{book.authors && book.authors.join(', ')}</div>
-                    <h5>{book.publisher}</h5>
-                </TextContainer>
-            </ListItem>
+            <UISref key={book.id} to="books.detail" params={{ id: book.id }}>
+                <ListItem>
+                    <ThumbnailContainer>
+                        <img src={book.thumbnail || bookIcon} />
+                    </ThumbnailContainer>
+                    <TextContainer>
+                        <h4>{book.title}</h4>
+                        <div>{book.subtitle}</div>
+                        <div>{book.authors && book.authors.join(', ')}</div>
+                        <h5>{book.publisher}</h5>
+                    </TextContainer>
+                </ListItem>
+            </UISref>
         );
     }
 

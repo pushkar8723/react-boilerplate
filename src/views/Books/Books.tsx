@@ -1,4 +1,4 @@
-import { UIView } from '@uirouter/react';
+import { UISref, UIView } from '@uirouter/react';
 import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Drawer from 'sleek-ui/Drawer';
@@ -179,9 +179,13 @@ class Books extends React.Component<IBooksProps, IBooksState> {
                     open={this.state.open}
                     headerContent={this.renderDrawerHeader()}
                     data={<React.Fragment>
-                        <ListItem href="#/books" onClick={this.toggleDrawer}>
-                            <MenuIcon className="material-icons">home</MenuIcon>
-                            Home
+                        <ListItem onClick={this.toggleDrawer}>
+                            <UISref to="books">
+                                <div>
+                                    <MenuIcon className="material-icons">home</MenuIcon>
+                                    Home
+                                </div>
+                            </UISref>
                         </ListItem>
                         <ListItem onClick={this.props.logout}>
                             <MenuIcon className="material-icons">exit_to_app</MenuIcon>

@@ -1,5 +1,5 @@
 import {
-    hashLocationPlugin,
+    pushStateLocationPlugin,
     servicesPlugin,
     Transition,
     TransitionHookFn,
@@ -25,7 +25,7 @@ export default class RoutingService extends ServiceBase {
         if (!this.router) {
             this.router = new UIRouterReact();
             this.router.plugin(servicesPlugin);
-            this.router.plugin(hashLocationPlugin);
+            this.router.plugin(pushStateLocationPlugin);
 
             // Lazy load visualizer. Helps in debugging
             // import('@uirouter/visualizer').then(module => this.router.plugin(module.Visualizer));

@@ -16,8 +16,8 @@ Just clone and start building pages. Maybe delete a few files first. :stuck_out_
 - [X] Build pipeline
 - [X] Test pipeline
 - [X] Lint checks
+- [X] Routing using browser history api
 - [ ] SSR
-- [ ] Routing using browser history api
 - [ ] Pre-rendering
 
 ### Why:question:
@@ -171,7 +171,7 @@ it('Test Get', () => {
 ### Nice! Any future milestone? :grin:
 Well yes, I will soon separate out state management logic and publish a npm package. Also, I will try to onboard atlease one other component rendering library (vue or polymer) to see how much of this code can be reused.
 
-SSR / pre-rendering with browser history api usage is also on top of my list right now.
+SSR / pre-rendering is also on top of my list right now.
 
 ### How can I contribute? :grinning:
 Improving documentation / raising issues can be a good starting point. If you could think of any feature that would be great and if you raise PR, nothing can beat that! :laughing:

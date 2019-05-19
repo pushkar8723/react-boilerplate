@@ -1,3 +1,4 @@
+import { UISref } from '@uirouter/react';
 import * as React from 'react';
 import styled from 'styled-components';
 import noPageGif from '../../images/noPage.gif';
@@ -38,7 +39,7 @@ export default class Error404 extends React.Component<{}> {
                 <Paper>
                     <img src={noPageGif} />
                     <h3>404 - Page not found :(</h3>
-                    <a href="#/welcome">Go Home</a>
+                    <UISref to="welcome"><a>Go Home</a></UISref>
                 </Paper>
             </Container>
         );
