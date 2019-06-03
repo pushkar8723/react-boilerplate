@@ -1,8 +1,9 @@
-import ControllerBase from 'core/ControllerBase';
-import { IGlobal } from 'core/types';
 import GoogleBooksService, { IBookDetail } from 'services/GoogleBooksService';
+import { ControllerBase } from 'sparkx/core';
+import { IGlobal } from '../../../types';
 
 export interface IDetailState {
+    /** Book details */
     data: IBookDetail;
 }
 

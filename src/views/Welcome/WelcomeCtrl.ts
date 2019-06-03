@@ -1,7 +1,7 @@
-import ControllerBase from 'core/ControllerBase';
-import { IGlobal } from 'core/types';
 import LocalStorageService from 'services/LocalStorageService';
-import RoutingService from 'services/RoutingService';
+import { ControllerBase } from 'sparkx/core';
+import { RoutingService } from 'sparkx/react';
+import { IGlobal } from '../../types';
 
 /**
  * Welcome Controller

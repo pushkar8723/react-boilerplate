@@ -1,8 +1,9 @@
-import {  IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
+import { IInjectedProps } from 'sparkx/react';
 import styled from 'styled-components';
 import bookIcon from '../../../images/bookIcon.png';
+import {  IGlobal } from '../../../types';
 import { Error404 } from '../../Error';
 import { IDetailState } from './DetailCtrl';
 
@@ -55,6 +56,9 @@ const P = styled.div`
 `;
 
 interface IDetailProps extends IInjectedProps<IGlobal, IDetailState> {
+    /**
+     * Fetches book's detail
+     */
     getBook: (bookId: string) => void;
 }
 

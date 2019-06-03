@@ -1,31 +1,82 @@
 import { AxiosPromise } from 'axios';
-import ServiceBase from 'core/ServiceBase';
-import HTTPService from './HTTPService';
+import { ServiceBase } from 'sparkx/core';
+import { HTTPService } from 'sparkx/services';
 
 interface IISBN {
+    /**
+     * Type of ISBN
+     */
     type: string;
+    /**
+     * ISBN number
+     */
     identifier: number;
 }
 
 interface IBookList {
+    /**
+     * Items in list
+     */
     items: IBookDetail[];
 }
 
 export interface IBookDetail {
+    /**
+     * Book ID
+     */
     id: string;
+    /**
+     * Book info
+     */
     volumeInfo: {
+        /**
+         * Authors
+         */
         authors: string[],
+        /**
+         * Average Rating
+         */
         averageRating: number,
+        /**
+         * Book categories
+         */
         categories: string[],
+        /**
+         * Description for book
+         */
         description: string,
+        /**
+         * Thumbnails for the book
+         */
         imageLinks: {
+            /**
+             * Standard size thumbnail
+             */
             thumbnail: string,
         }
+        /**
+         * ISBN numbers
+         */
         industryIdentifiers: IISBN[],
+        /**
+         * Number of pages in book
+         */
         pageCount: number,
+        /**
+         * Publisher for the book
+         */
         publisher: string,
+        /**
+         * Book's rating
+         */
         ratingsCount: number,
+        /**
+         * Book's subtitle
+         */
         subtitle: string,
+        /**
+         * Book's title
+         */
         title: string,
     };
 }

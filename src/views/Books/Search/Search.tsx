@@ -1,10 +1,10 @@
-import { UISref } from '@uirouter/react';
-import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
+import { IInjectedProps, UISref } from 'sparkx/react';
 import styled from 'styled-components';
 import bookIcon from '../../../images/bookIcon.png';
 import searchGif from '../../../images/search.gif';
+import { IGlobal } from '../../../types';
 
 const Container = styled.div`
     display: flex;
@@ -60,15 +60,22 @@ const TextContainer = styled.div`
 `;
 
 interface IBook {
+    /** Book's authors */
     authors: string[];
+    /** Book's unique identifier */
     id: string;
+    /** Book's title */
     title: string;
+    /** Book's subtitle */
     subtitle: string;
+    /** Book's publisher */
     publisher: string;
+    /** Standard size thumbnail for the book */
     thumbnail: string;
 }
 
 interface ISearchProps extends IInjectedProps<IGlobal, {
+    /** Book list */
     books: IBook[];
 }> {}
 

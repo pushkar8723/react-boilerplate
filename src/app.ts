@@ -1,13 +1,11 @@
-import { Transition } from '@uirouter/core';
 import routes from 'config/routes';
-import { initApp } from 'core/App';
-import { AccessType, IGlobal } from 'core/types';
 import * as ReactDOM from 'react-dom';
-import HTTPService from 'services/HTTPService';
 import LocalStorageService from 'services/LocalStorageService';
-import RoutingService from 'services/RoutingService';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
+import { initApp, RoutingService, Transition } from 'sparkx/react';
+import { HTTPService } from 'sparkx/services';
 import './styles/main.css';
+import { AccessType, IGlobal } from './types';
 
 const localStorageService = new LocalStorageService();
 const routingService = new RoutingService();

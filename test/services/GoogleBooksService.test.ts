@@ -1,9 +1,9 @@
 import GoogleBooksService from 'services/GoogleBooksService';
-import HTTPService from 'services/HTTPService';
+import { HTTPService } from 'sparkx/services';
 
 let service: GoogleBooksService;
 const endpoint = 'https://www.googleapis.com/books/v1';
-jest.mock('services/HTTPService');
+jest.mock('sparkx/services');
 
 describe('Test Google Books Service', () => {
     beforeEach(() => {

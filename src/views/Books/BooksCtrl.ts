@@ -1,19 +1,28 @@
-import ControllerBase from 'core/ControllerBase';
-import { IGlobal } from 'core/types';
 import GoogleBooksService from 'services/GoogleBooksService';
 import LocalStorageService from 'services/LocalStorageService';
-import RoutingService from 'services/RoutingService';
+import { ControllerBase } from 'sparkx/core';
+import { RoutingService } from 'sparkx/react';
+import { IGlobal } from '../../types';
 
 export interface IBooksState {
+    /**
+     * List of books
+     */
     books: IBookListItem[];
 }
 
 export interface IBookListItem {
+    /** Book authors */
     authors: string[];
+    /** Book Identifier */
     id: string;
+    /** Publisher */
     publisher: string;
+    /** Subtitle for the book */
     subtitle: string;
+    /** Standard size thumbnail for the book */
     thumbnail?: string;
+    /** Book's title */
     title: string;
 }
 

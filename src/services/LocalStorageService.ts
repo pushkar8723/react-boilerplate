@@ -1,4 +1,4 @@
-import ServiceBase from 'core/ServiceBase';
+import { ServiceBase } from 'sparkx/core';
 
 /**
  * Service for localStorage management.

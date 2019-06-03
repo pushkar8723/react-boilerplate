@@ -1,8 +1,8 @@
-import { UISref, UIView } from '@uirouter/react';
-import { IGlobal, IInjectedProps } from 'core/types';
 import * as React from 'react';
 import Drawer from 'sleek-ui/Drawer';
+import { IInjectedProps, UISref, UIView } from 'sparkx/react';
 import styled from 'styled-components';
+import { IGlobal } from '../../types';
 
 const Toolbar = styled.div`
     min-height: 64px;
@@ -85,13 +85,24 @@ const NameContainer = styled.h4`
 `;
 
 interface IBooksProps extends IInjectedProps<IGlobal, IBooksState> {
-    updateGlobalAuth: () => void;
+    /**
+     * Loads a book
+     */
     loadBook: (bookName: string) => void;
+    /**
+     * Logs out the user
+     */
     logout: () => void;
 }
 
 interface IBooksState {
+    /**
+     * Search text
+     */
     inputText: string;
+    /**
+     * Flag to denote if drawer is open.
+     */
     open: boolean;
 }
 

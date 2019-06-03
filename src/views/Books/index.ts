@@ -1,5 +1,5 @@
-import { createRoute } from 'core/stateManagement';
-import { AccessType } from 'core/types';
+import { createRoute } from 'sparkx/react';
+import { AccessType } from '../../types';
 import Books from './Books';
 import BooksCtrl from './BooksCtrl';
 import { Detail, DetailCtrl } from './Detail';

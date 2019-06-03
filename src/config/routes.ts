@@ -1,7 +1,7 @@
-import { createRoute } from 'core/stateManagement';
-import { AccessType } from 'core/types';
+import { createRoute } from 'sparkx/react';
 import { Error404 } from 'views/Error';
 import { Welcome, WelcomeCtrl } from 'views/Welcome';
+import { AccessType } from '../types';
 
 /**
  * This is the 'welcome' state.  It is the default state (as defined by app.js) if no other state
