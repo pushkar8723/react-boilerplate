@@ -14,7 +14,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const copyPlugin = new CopyPlugin([
-    { from: './_redirects', to: './'}
+    { from: './_redirects', to: './' },
 ]);
 
 const config = {
@@ -27,7 +27,7 @@ export default {
         filename: '[name].bundle.js',
         chunkFilename: '[name].[hash].js',
         path: `${__dirname}/dist`,
-        publicPath: '/'
+        publicPath: '/',
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -39,7 +39,7 @@ export default {
             ignored: /node_modules/,
         },
         host: '0.0.0.0',
-        historyApiFallback: true
+        historyApiFallback: true,
     },
 
     resolve: {
@@ -98,6 +98,6 @@ export default {
         ...(isProduction ? [ new BundleAnalyzerPlugin({
             analyzerMode: 'static',
         })] : []),
-        copyPlugin
+        copyPlugin,
     ],
 };
