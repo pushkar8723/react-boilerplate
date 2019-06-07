@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import CompressionPlugin from 'compression-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
@@ -22,6 +21,7 @@ const config = {
 };
 
 export default {
+    mode,
     entry: './src/app.ts',
     output: {
         filename: '[name].bundle.js',
@@ -94,10 +94,7 @@ export default {
     plugins: [
         htmlPlugin,
         new webpack.DefinePlugin(config),
-        new CompressionPlugin(),
-        ...(isProduction ? [ new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-        })] : []),
+        ...(isProduction ? [new BundleAnalyzerPlugin()] : []),
         copyPlugin,
     ],
 };
