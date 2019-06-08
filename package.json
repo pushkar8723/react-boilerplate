@@ -31,7 +31,7 @@
     "react-dom": "^16.8.3",
     "react-google-login": "^5.0.4",
     "sleek-ui": "^3.0.110",
-    "sparkx": "0.0.14",
+    "sparkx": "0.0.15",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
@@ -88,13 +88,9 @@
   "pre-commit": "check-all",
   "jest": {
     "moduleNameMapper": {
-      "^core(.*)$": "<rootDir>/src/core$1",
       "^services(.*)$": "<rootDir>/src/services$1",
       "^config(.*)$": "<rootDir>/src/config$1",
-      "^views(.*)$": "<rootDir>/src/views$1",
-      "^utils(.*)$": "<rootDir>/src/utils$1",
-      "^model(.*)$": "<rootDir>/src/model$1",
-      "^components(.*)$": "<rootDir>/src/components$1"
+      "^views(.*)$": "<rootDir>/src/views$1"
     },
     "moduleFileExtensions": [
       "js",

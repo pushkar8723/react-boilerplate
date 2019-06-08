@@ -2,7 +2,7 @@ import routes from 'config/routes';
 import * as ReactDOM from 'react-dom';
 import LocalStorageService from 'services/LocalStorageService';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
-import { initApp, RoutingService, Transition } from 'sparkx/react';
+import { initApp, pushStateLocationPlugin, RoutingService, Transition } from 'sparkx/react';
 import { HTTPService } from 'sparkx/services';
 import './styles/main.css';
 import { AccessType, IGlobal } from './types';
@@ -50,6 +50,9 @@ ReactDOM.render(
                     return error;
                 },
             );
+
+            // Register plugin
+            routingService.registerPlugin(pushStateLocationPlugin);
 
             // Register routes.
             routingService.registerRoutes(routes);
