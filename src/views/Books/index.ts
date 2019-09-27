@@ -1,4 +1,4 @@
-import { createRoute } from 'sparkx/react';
+import { createRoute } from '@sparkx/react';
 import { AccessType } from '../../types';
 import Books from './Books';
 import BooksCtrl from './BooksCtrl';

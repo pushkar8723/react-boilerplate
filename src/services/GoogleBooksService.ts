@@ -1,6 +1,5 @@
-import { AxiosPromise } from 'axios';
-import { ServiceBase } from 'sparkx/core';
-import { HTTPService } from 'sparkx/services';
+import { ServiceBase } from '@sparkx/core';
+import { AxiosPromise, HTTPService } from '@sparkx/services';
 
 interface IISBN {
     /**

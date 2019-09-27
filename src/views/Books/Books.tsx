@@ -1,6 +1,6 @@
+import { IInjectedProps, UISref, UIView } from '@sparkx/react';
 import * as React from 'react';
 import Drawer from 'sleek-ui/Drawer';
-import { IInjectedProps, UISref, UIView } from 'sparkx/react';
 import styled from 'styled-components';
 import { IGlobal } from '../../types';
 

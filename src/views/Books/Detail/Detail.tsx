@@ -1,6 +1,6 @@
+import { IInjectedProps } from '@sparkx/react';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
-import { IInjectedProps } from 'sparkx/react';
 import styled from 'styled-components';
 import bookIcon from '../../../images/bookIcon.png';
 import {  IGlobal } from '../../../types';

@@ -1,7 +1,7 @@
+import { ControllerBase } from '@sparkx/core';
+import { RoutingService } from '@sparkx/react';
 import GoogleBooksService from 'services/GoogleBooksService';
 import LocalStorageService from 'services/LocalStorageService';
-import { ControllerBase } from 'sparkx/core';
-import { RoutingService } from 'sparkx/react';
 import { IGlobal } from '../../types';
 
 export interface IBooksState {

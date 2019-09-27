@@ -1,6 +1,6 @@
+import { IInjectedProps, UISref } from '@sparkx/react';
 import * as React from 'react';
 import Loader from 'sleek-ui/Loader';
-import { IInjectedProps, UISref } from 'sparkx/react';
 import styled from 'styled-components';
 import bookIcon from '../../../images/bookIcon.png';
 import searchGif from '../../../images/search.gif';

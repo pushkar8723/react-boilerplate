@@ -1,4 +1,4 @@
-import { createRoute } from 'sparkx/react';
+import { createRoute } from '@sparkx/react';
 import { Error404 } from 'views/Error';
 import { Welcome, WelcomeCtrl } from 'views/Welcome';
 import { AccessType } from '../types';

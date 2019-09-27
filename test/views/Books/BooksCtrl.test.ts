@@ -1,6 +1,6 @@
+import { RoutingService } from '@sparkx/react';
 import GoogleBooksService from 'services/GoogleBooksService';
 import LocalStorage from 'services/LocalStorageService';
-import { RoutingService } from 'sparkx/react';
 import BooksCtrl from 'views/Books/BooksCtrl';
 import bookSearchResponse from './BooksSearch.json';
 
@@ -11,7 +11,7 @@ const authMock = {
     email: 'pushkar8723@gmail.com',
 };
 jest.mock('services/LocalStorageService');
-jest.mock('sparkx/react');
+jest.mock('@sparkx/react');
 jest.mock('services/GoogleBooksService');
 
 describe('Books Controller Tests', () => {

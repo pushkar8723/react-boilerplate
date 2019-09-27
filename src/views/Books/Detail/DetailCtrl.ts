@@ -1,5 +1,5 @@
+import { ControllerBase } from '@sparkx/core';
 import GoogleBooksService, { IBookDetail } from 'services/GoogleBooksService';
-import { ControllerBase } from 'sparkx/core';
 import { IGlobal } from '../../../types';
 
 export interface IDetailState {
@@ -22,7 +22,7 @@ class DetailCtrl extends ControllerBase<IDetailState, IGlobal> {
      */
     public getBook = (id: string) => {
         return this._googleBooksService.getBook(id, true).then(
-            (resp) => {
+            (resp: any) => {
                 this._setScope({ data: resp.data });
             },
             () => {

@@ -1,5 +1,5 @@
+import { RoutingService } from '@sparkx/react';
 import LocalStorage from 'services/LocalStorageService';
-import { RoutingService } from 'sparkx/react';
 import WelcomeCtrl from 'views/Welcome/WelcomeCtrl';
 
 let ctrl;
@@ -11,7 +11,7 @@ const mockData = {
     givenName: 'Pushkar',
     name: 'Pushkar Anand',
 };
-jest.mock('sparkx/react');
+jest.mock('@sparkx/react');
 jest.mock('services/LocalStorageService');
 
 describe('Welcome Controller Tests', () => {

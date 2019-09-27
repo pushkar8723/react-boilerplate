@@ -1,4 +1,4 @@
-import { UISref } from '@uirouter/react';
+import { UISref } from '@sparkx/react';
 import * as React from 'react';
 import styled from 'styled-components';
 import noPageGif from '../../images/noPage.gif';

@@ -1,7 +1,7 @@
+import { IInjectedProps } from '@sparkx/react';
 import * as React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
-import { IInjectedProps } from 'sparkx/react';
 import styled from 'styled-components';
 import logoPng from '../../images/logo.png';
 import { IGlobal } from '../../types';

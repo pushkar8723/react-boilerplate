@@ -1,9 +1,9 @@
+import { initApp, pushStateLocationPlugin, RoutingService, Transition } from '@sparkx/react';
+import { HTTPService } from '@sparkx/services';
 import routes from 'config/routes';
 import * as ReactDOM from 'react-dom';
 import LocalStorageService from 'services/LocalStorageService';
 import Notification, { NOTIFICATION_POSITION } from 'sleek-ui/Notification';
-import { initApp, pushStateLocationPlugin, RoutingService, Transition } from 'sparkx/react';
-import { HTTPService } from 'sparkx/services';
 import './styles/main.css';
 import { AccessType, IGlobal } from './types';
 
@@ -81,6 +81,8 @@ ReactDOM.render(
                     return transition.router.stateService.target('books');
                 }
             });
-        }),
+        },
+        __MODE__,
+    ),
     document.getElementById('root'),
 );
