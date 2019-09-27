@@ -31,9 +31,9 @@
     "react-dom": "^16.8.3",
     "react-google-login": "^5.0.4",
     "sleek-ui": "^3.0.110",
-    "@sparkx/core": "^0.0.2",
-    "@sparkx/react": "^0.0.2",
-    "@sparkx/services": "^0.0.2",
+    "@sparkx/core": "^0.0.3",
+    "@sparkx/react": "^0.0.3",
+    "@sparkx/services": "^0.0.3",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
