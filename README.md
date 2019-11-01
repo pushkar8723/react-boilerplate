@@ -47,7 +47,7 @@ Each controller must extend `ControllerBase` class.
 ##### 3. Routing
 Instead of using `react-router`, we are using `ui-router` for our routing. This is done because personally I feel that route is a logical entity of application and representing it with components makes code a little complex and unreadable. `ui-router` represents states using objects and thus it is much more readable.
 
-Also, `ui-router` is framwork independent and thus this gives us room to use some other view library like vue or polymer just by changing few pieces in the core logic.
+Also, `ui-router` is framwork independent and thus this gives us room to use some other view library like vue or lit-element just by changing few pieces in the core logic.
 
 A route is created using `createRoute` method. It takes in config of format
 ```typescript
