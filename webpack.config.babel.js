@@ -13,6 +13,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 const copyPlugin = new CopyPlugin([
     { from: './_redirects', to: './' },
+    { from: './robots.txt', to: './' },
 ]);
 
 const config = {

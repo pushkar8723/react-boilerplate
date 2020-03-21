@@ -70,7 +70,7 @@ class Welcome extends React.Component<IWelcomeProps> {
     public render() {
         return (
             <Page>
-                <LogoImage src={logoPng} />
+                <LogoImage src={logoPng} alt="Logo" />
                 <LoginContainer>
                     <h1>Books</h1>
                     <WelcomeTextContainer>
